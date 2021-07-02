@@ -15,10 +15,19 @@
 
 template < typename T>
 void
-test_max_size()	{
+test_max_size(int line)	{
 	std::deque<T>		std_c0;
 	ft::deque<T>		ft_c0;
-	testBool(std_c0.max_size() == ft_c0.max_size(), __LINE__);
+	try {
+		testBool(std_c0.max_size() == ft_c0.max_size(), line);
+	}
+	catch (std::exception & e)	{
+
+		std::cout << ERROR_TITLE << "Ft max_size = " << ft_c0.max_size() << RESET_COLOR << std::endl;
+		std::cout << ERROR_TITLE << "std max_size = " << std_c0.max_size() << RESET_COLOR << std::endl;
+		std::cout << ERROR_TITLE << "FAILED TEST : " << e.what() << RESET_COLOR << std::endl;
+		throw failedTest();
+	}
 }
 
 int
@@ -63,12 +72,12 @@ test_deque_capacities( void )	{
 	}
 
 	std::cout << HEADER_TITLE << "[ Max Size with various types ]" << RESET_COLOR << std::endl;
-	test_max_size<short>();
-	test_max_size<char>();
-	test_max_size<int>();
-	test_max_size<float>();
-	test_max_size<double>();
-	test_max_size<std::string>();
-	test_max_size<exampleClass>();
+	test_max_size<short>(__LINE__);
+	test_max_size<char>(__LINE__);
+	test_max_size<int>(__LINE__);
+	test_max_size<float>(__LINE__);
+	test_max_size<double>(__LINE__);
+	test_max_size<std::string>(__LINE__);
+	test_max_size<exampleClass>(__LINE__);
 	return (0);
 }

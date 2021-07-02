@@ -108,7 +108,6 @@ HEADER += ./compClass.hpp
 #-------- MAIN #################################################################
 ################################################################################
 
-SRCS += ./main.cpp
 SRCS += ./main_utils.cpp
 
 ################################################################################
@@ -260,67 +259,79 @@ OBJS = $(patsubst %.cpp, $(OBJ_DIR)%.o, $(SRCS))
 
 PCHS = $(patsubst %.hpp, $(PCH_DIR)%.pch, $(PROJECT_HEADER))
 
-all :
+all:
 	$(MAKE) $(NAME)
 	@echo
 	@echo
 
-vector : $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_VECTOR)
-	$(CC) -std=c++11 $(CFLAGS) $(OBJS) $(OBJS_VECTOR) -I $(INCLUDES) -o $(NAME)
+deque: $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_DEQUE)
+	$(CC) -std=c++11 $(CFLAGS) $(OBJS) $(OBJS_DEQUE) -I $(INCLUDES) -o $@
 	@echo
 	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
-	@./$(NAME) $@ | cat -n
+	@./$@ | cat -n
 
-list : all
+list: $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_LIST)
+	$(CC) -std=c++11 $(CFLAGS) $(OBJS) $(OBJS_LIST) -I $(INCLUDES) -o $@
 	@echo
 	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
-	@./$(NAME) $@ | cat -n
+	@./$@ | cat -n
 
-map : all
+map: $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_MAP)
+	$(CC) -std=c++11 $(CFLAGS) $(OBJS) $(OBJS_MAP) -I $(INCLUDES) -o $@
 	@echo
 	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
-	@./$(NAME) $@ | cat -n
+	@./$@ | cat -n
 
-set : all
+vector: $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_VECTOR)
+	$(CC) -std=c++11 $(CFLAGS) $(OBJS) $(OBJS_VECTOR) -I $(INCLUDES) -o $@
 	@echo
 	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
-	@./$(NAME) $@ | cat -n
+	@./$@ | cat -n
 
-queue : all
+stack: $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_STACK)
+	$(CC) -std=c++11 $(CFLAGS) $(OBJS) $(OBJS_STACK) -I $(INCLUDES) -o $@
 	@echo
 	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
-	@./$(NAME) $@ | cat -n
+	@./$@ | cat -n
 
-stack : all
-	@echo
-	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
-	@./$(NAME) $@ | cat -n
 
-deque : all
+set: $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_SET)
+	$(CC) -std=c++11 $(CFLAGS) $(OBJS) $(OBJS_SET) -I $(INCLUDES) -o $@
 	@echo
 	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
-	@./$(NAME) $@ | cat -n
+	@./$@ | cat -n
+
+queue: $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_QUEUE)
+	$(CC) -std=c++11 $(CFLAGS) $(OBJS) $(OBJS_QUEUE) -I $(INCLUDES) -o $@
+	@echo
+	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
+	@./$@ | cat -n
 
 $(OBJS_DEQUE): $(OBJ_DIR)%.o: %.cpp $(PROJECT_HEADER) $(HEADER)
 	$(CC) -std=c++11 $(CFLAGS) $(OTHER_FLAGS) -c $<  -I $(INCLUDES) -o $@
+
 $(OBJS_LIST): $(OBJ_DIR)%.o: %.cpp $(PROJECT_HEADER) $(HEADER)
 	$(CC) -std=c++11 $(CFLAGS) $(OTHER_FLAGS) -c $<  -I $(INCLUDES) -o $@
+
 $(OBJS_MAP): $(OBJ_DIR)%.o: %.cpp $(PROJECT_HEADER) $(HEADER)
 	$(CC) -std=c++11 $(CFLAGS) $(OTHER_FLAGS) -c $<  -I $(INCLUDES) -o $@
+
 $(OBJS_QUEUE): $(OBJ_DIR)%.o: %.cpp $(PROJECT_HEADER) $(HEADER)
 	$(CC) -std=c++11 $(CFLAGS) $(OTHER_FLAGS) -c $<  -I $(INCLUDES) -o $@
+
 $(OBJS_SET): $(OBJ_DIR)%.o: %.cpp $(PROJECT_HEADER) $(HEADER)
 	$(CC) -std=c++11 $(CFLAGS) $(OTHER_FLAGS) -c $<  -I $(INCLUDES) -o $@
+
 $(OBJS_STACK): $(OBJ_DIR)%.o: %.cpp $(PROJECT_HEADER) $(HEADER)
 	$(CC) -std=c++11 $(CFLAGS) $(OTHER_FLAGS) -c $<  -I $(INCLUDES) -o $@
+
 $(OBJS_VECTOR): $(OBJ_DIR)%.o: %.cpp $(PROJECT_HEADER) $(HEADER)
 	$(CC) -std=c++11 $(CFLAGS) $(OTHER_FLAGS) -c $<  -I $(INCLUDES) -o $@
+
 $(OBJS): $(OBJ_DIR)%.o: %.cpp $(PROJECT_HEADER) $(HEADER)
 	$(CC) -std=c++11 $(CFLAGS) $(OTHER_FLAGS) -c $<  -I $(INCLUDES) -o $@
 
-$(NAME): $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_STACK) $(OBJS_LIST) $(OBJS_VECTOR) $(OBJS_QUEUE) $(OBJS_SET) $(OBJS_DEQUE) $(OBJS_MAP)
-	$(CC) -std=c++11 $(CFLAGS) $(OBJS) $(OBJS_STACK) $(OBJS_LIST) $(OBJS_VECTOR) $(OBJS_QUEUE) $(OBJS_SET) $(OBJS_DEQUE) $(OBJS_MAP) -I $(INCLUDES) -o $@
-	@echo "🎉 \033[32m$@ is ready !\033[0m ✅"
+$(NAME): vector list map set queue stack deque 
 
 $(PCHS): $(PCH_DIR)%.pch: %.hpp $(PROJECT_HEADER)
 	$(CC) -std=c++98 $(CFLAGS) $< -o $@
@@ -331,7 +342,11 @@ $(OBJ_DIR):
 $(PCH_DIR):
 	@mkdir -p $@
 
+cpp98 : $(PCH_DIR) $(PCHS)
+	@echo "🎉 \033[32m Your project's headers are cpp98 compliant $@ !\033[0m ✅"
+
 pch:
+	$(MAKE) $(PCH_DIR)
 	$(MAKE) $(PCHS)
 
 FORCE :
@@ -340,20 +355,12 @@ clean :
 	$(RM) -R $(OBJ_DIR) $(PCH_DIR)
 
 fclean : clean
-	$(RM) $(NAME) output.log
+	$(RM) $(NAME) list map queue stack deque set vector 
 
 re : fclean
 	@$(MAKE)
 
-f : all
-	@echo
-	@echo
-	@./$(NAME) | cat -n
+f : cpp98 all
 
-cmp: all
-	./$(NAME) > output.log
-	@echo "\n 🎉  \033[32m Colordiff. Reference on the left, my output on the right\033[0m"
-	diff -y ./subject.log ./output.log
-
-.PHONY: all clean fclean mclean re FORCE cmp
+.PHONY: all clean fclean mclean re list map queue stack deque set vector FORCE cmp
 #.SILENT:

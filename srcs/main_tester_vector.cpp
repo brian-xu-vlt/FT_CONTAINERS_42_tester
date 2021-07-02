@@ -6,37 +6,39 @@
 /*   By: bvalette <bvalette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 16:23:15 by bvalette          #+#    #+#             */
-/*   Updated: 2021/06/08 17:12:56 by bvalette         ###   ########.fr       */
+/*   Updated: 2021/07/02 14:16:42 by bvalette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "./tester/bvaletteTester_vector.hpp"
 
 int
-main_tester_vector( void )	{
+main( void )	{
 
 	std::cout << std::endl << std::endl;
 	std::cout << MAIN_TITLE << " CONTAINER TESTER ============= " << __func__ << RESET_COLOR << std::endl;
-
+	bool error_flag = false;
 	try {
 
-		test_vector_instantiation();
-		test_vector_iterator();
-		test_vector_reverseIterator();
-		test_vector_capacities();
-		test_vector_resize();
-		test_vector_insert_erase();
-		test_vector_push_back_pop_back();
-		test_vector_assign();
-		test_vector_clear();
-		test_vector_at_operatorBrackets();
-		test_vector_element_access();
-		test_vector_member_swap();
-		test_vector_nonmember_swap();
-		test_vector_relational_operators();
-		test_vector_operatorEqual();
+		try 	{ test_vector_instantiation(); }	catch(std::exception &e)	{ error_flag = true; }
+		try 	{ test_vector_iterator(); }	catch(std::exception &e)	{ error_flag = true; }
+		try 	{ test_vector_reverseIterator(); }	catch(std::exception &e)	{ error_flag = true; }
+		try 	{ test_vector_capacities(); }	catch(std::exception &e)	{ error_flag = true; }
+		try 	{ test_vector_resize(); }	catch(std::exception &e)	{ error_flag = true; }
+		try 	{ test_vector_insert_erase(); }	catch(std::exception &e)	{ error_flag = true; }
+		try 	{ test_vector_push_back_pop_back(); }	catch(std::exception &e)	{ error_flag = true; }
+		try 	{ test_vector_assign(); }	catch(std::exception &e)	{ error_flag = true; }
+		try 	{ test_vector_clear(); }	catch(std::exception &e)	{ error_flag = true; }
+		try 	{ test_vector_at_operatorBrackets(); }	catch(std::exception &e)	{ error_flag = true; }
+		try 	{ test_vector_element_access(); }	catch(std::exception &e)	{ error_flag = true; }
+		try 	{ test_vector_member_swap(); }	catch(std::exception &e)	{ error_flag = true; }
+		try 	{ test_vector_nonmember_swap(); }	catch(std::exception &e)	{ error_flag = true; }
+		try 	{ test_vector_relational_operators(); }	catch(std::exception &e)	{ error_flag = true; }
+		try 	{ test_vector_operatorEqual(); }	catch(std::exception &e)	{ error_flag = true; }
 
-		if (DEBUG_MODE == 0)
+		if (error_flag == true)
+			throw failedTest();
+		else if (DEBUG_MODE == 0)
 		{
 			std::cout << SUBTITLE << "For :" << __func__ <<", ALL TESTS PASSED ~~~~~~> " << RESET_COLOR;
 			std::cout << BLINK << "\t \xF0\x9F\x8E\x89 \xF0\x9F\x8E\x8A" << RESET_COLOR << std::endl;

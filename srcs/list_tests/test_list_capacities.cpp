@@ -6,7 +6,7 @@
 /*   By: bvalette <bvalette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 08:43:18 by bvalette          #+#    #+#             */
-/*   Updated: 2021/05/31 16:54:32 by bvalette         ###   ########.fr       */
+/*   Updated: 2021/07/02 14:18:11 by bvalette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,19 @@
 
 template < typename T>
 void
-test_max_size()	{
+test_max_size(int line)	{
 	std::list<T>	std_c0;
 	ft::list<T>		ft_c0;
-	if (testBool(std_c0.max_size() == ft_c0.max_size(), __LINE__) != true)
-		std::cout << ERROR_TITLE << "Sizes returned : ft("<< ft_c0.max_size() <<") std("<< std_c0.max_size() <<")" << RESET_COLOR << std::endl;
+	try {
+		testBool(std_c0.max_size() == ft_c0.max_size(), line);
+	}
+	catch (std::exception & e)	{
+
+		std::cout << ERROR_TITLE << "Ft max_size = " << ft_c0.max_size() << RESET_COLOR << std::endl;
+		std::cout << ERROR_TITLE << "std max_size = " << std_c0.max_size() << RESET_COLOR << std::endl;
+		std::cout << ERROR_TITLE << "FAILED TEST : " << e.what() << RESET_COLOR << std::endl;
+		throw failedTest();
+	}
 }
 
 int
@@ -55,13 +63,13 @@ test_list_capacities( void )	{
 		testBool(std.empty() == ft.empty(), __LINE__);
 	}
 	std::cout << HEADER_TITLE << "[ Max Size with various types ]" << RESET_COLOR << std::endl;
-	test_max_size<bool>();
-	test_max_size<short>();
-	test_max_size<char>();
-	test_max_size<int>();
-	test_max_size<float>();
-	test_max_size<double>();
-	test_max_size<std::string>();
-	test_max_size<exampleClass>();
+	test_max_size<bool>(__LINE__);
+	test_max_size<short>(__LINE__);
+	test_max_size<char>(__LINE__);
+	test_max_size<int>(__LINE__);
+	test_max_size<float>(__LINE__);
+	test_max_size<double>(__LINE__);
+	test_max_size<std::string>(__LINE__);
+	test_max_size<exampleClass>(__LINE__);
 	return (0);
 }

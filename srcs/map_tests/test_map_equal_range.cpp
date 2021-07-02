@@ -6,7 +6,7 @@
 /*   By: bvalette <bvalette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 15:37:34 by bvalette          #+#    #+#             */
-/*   Updated: 2021/06/01 11:30:35 by bvalette         ###   ########.fr       */
+/*   Updated: 2021/07/02 14:25:31 by bvalette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ test_map_equal_range( void )	{
 		testMap(ft_c0, std_c0, NOPRINT);
 
 		std_c0_ret = std_c0.equal_range(42);
-		ft_c0_ret = ft_c0.equal_range(42);
+	//	ft_c0_ret = ft_c0.equal_range(42);
 
 		if (std_c0_ret.first == std_c0.end())
 			testBool(ft_c0_ret.first == ft_c0.end(), __LINE__);

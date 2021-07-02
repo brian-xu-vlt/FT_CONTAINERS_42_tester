@@ -15,15 +15,16 @@
 
 ---
 
-### This project is a tester I developed while completing the FT_CONTAINERS project at École 42.
 <p align="center">
   <img width=100px src="./assets/cpp.png" alt="Project logo"></a>
+  <h3>This project is a tester I developed while completing the FT_CONTAINERS project at École 42.</h3>
 </p>
 
 ## 📝 Table of Contents
 
 - [About](#about)
 - [Getting Started](#getting_started)
+- [Usage](#usage)
 - [Acknowledgement](#acknowledgement)
 
 ## 🧐 About <a name = "about"></a>
@@ -50,12 +51,16 @@ Note: this test assumes you have implemented your own ft::pair (as you should).
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
-- First place your projects headers in directory : `./includes/your_headers_files`
+- First, place your projects headers in directory : `./includes/your_headers_files`
 - Then update the file `./includes/your_headers.hpp` to include your files.
-- `make f` will precompile your headers and check their std98 compiliance, then compile the tester and run every tests.
-- `make <container name>` will perform tests on a specific container.
 
-Note: Tester will stop at the first failure (except tests performed on max_size of some containers as their result mey vary with OS, and may reflect some personnal decision on implementation which may be valid and yield to variation with STL).
+## 👩‍💻 Usage <a name = "usage"></a>
+
+- `make f` will precompile your headers and check their std98 compliance, then compile the tester and run every tests.
+- `make [container names]` will perform tests on a specific containers, one after the other according to the list passed.
+- `make cpp98` will perform tests one your header to verify cpp98 compliance.
+
+Note: Each tester will stop at the first failure (except tests performed on max_size of some containers as their result may vary with OS, and may reflect some personnal decision on implementation which may be valid and yield to variation with STL).
 
 ## ⚠️  Acknowledgement <a name = "acknowledgement"></a>
 
