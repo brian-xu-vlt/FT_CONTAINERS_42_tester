@@ -6,7 +6,7 @@
 /*   By: bvalette <bvalette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 09:49:36 by bvalette          #+#    #+#             */
-/*   Updated: 2021/05/31 10:30:28 by bvalette         ###   ########.fr       */
+/*   Updated: 2021/07/02 14:32:43 by bvalette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ test_vector_clear( void )	{
 		ft::vector<float>().swap(ft_c0);
 		std::vector<float>().swap(std_c0);
 		testVector(ft_c0, std_c0, NOPRINT);
-		testBool(ft_c0.capacity() == std_c0.capacity(), __LINE__);
+		testBool(ft_c0.capacity() == std_c0.capacity(), __FILE__, __LINE__);
 	}
 	std::cout << TITLE << "~~~~~~~~~~~ " << __func__ << " with floats ~~~~~~~~~~~" << RESET_COLOR << std::endl;
 	{

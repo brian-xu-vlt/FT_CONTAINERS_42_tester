@@ -6,7 +6,7 @@
 /*   By: bvalette <bvalette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 11:54:17 by bvalette          #+#    #+#             */
-/*   Updated: 2021/06/09 17:47:51 by bvalette         ###   ########.fr       */
+/*   Updated: 2021/07/02 14:32:43 by bvalette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ test_set_const_lower_bound(int findKey, std::set<exampleClass> const std_c0, ft:
 		ft::set<exampleClass>::const_iterator	ft_c0_ret = ft_c0.lower_bound(findKey);
 
 		if (std_c0_ret == std_c0.end())
-			testBool(ft_c0_ret == ft_c0.end(), __LINE__);
-		else if (testBool(ft_c0_ret != ft_c0.end(), __LINE__) == true)
-			testBool(*ft_c0_ret== *std_c0_ret, __LINE__);
+			testBool(ft_c0_ret == ft_c0.end(), __FILE__, __LINE__);
+		else if (testBool(ft_c0_ret != ft_c0.end(), __FILE__, __LINE__) == true)
+			testBool(*ft_c0_ret== *std_c0_ret, __FILE__, __LINE__);
 }
 
 int
@@ -57,9 +57,9 @@ test_set_lower_bound( void )	{
 		ft::set<exampleClass>::iterator	ft_c0_ret = ft_c0.lower_bound(findKey);
 
 		if (std_c0_ret == std_c0.end())
-			testBool(ft_c0_ret == ft_c0.end(), __LINE__);
-		else if (testBool(ft_c0_ret != ft_c0.end(), __LINE__) == true)
-			testBool(*ft_c0_ret== *std_c0_ret, __LINE__);
+			testBool(ft_c0_ret == ft_c0.end(), __FILE__, __LINE__);
+		else if (testBool(ft_c0_ret != ft_c0.end(), __FILE__, __LINE__) == true)
+			testBool(*ft_c0_ret== *std_c0_ret, __FILE__, __LINE__);
 
 		test_set_const_lower_bound(findKey, std_c0, ft_c0);
 
@@ -68,18 +68,18 @@ test_set_lower_bound( void )	{
 		ft_c0_ret = ft_c0.lower_bound(testSize * 2);
 
 		if (std_c0_ret == std_c0.end())
-			testBool(ft_c0_ret == ft_c0.end(), __LINE__);
-		else if (testBool(ft_c0_ret != ft_c0.end(), __LINE__) == true)
-			testBool(*ft_c0_ret== *std_c0_ret, __LINE__);
+			testBool(ft_c0_ret == ft_c0.end(), __FILE__, __LINE__);
+		else if (testBool(ft_c0_ret != ft_c0.end(), __FILE__, __LINE__) == true)
+			testBool(*ft_c0_ret== *std_c0_ret, __FILE__, __LINE__);
 
 		std::cout << HEADER_TITLE << "[ Test lower_bound with a value absent from the set (lower than the lowest key)]" << RESET_COLOR << std::endl;
 		std_c0_ret = std_c0.lower_bound(-42);
 		ft_c0_ret = ft_c0.lower_bound(-42);
 
 		if (std_c0_ret == std_c0.end())
-			testBool(ft_c0_ret == ft_c0.end(), __LINE__);
-		else if (testBool(ft_c0_ret != ft_c0.end(), __LINE__) == true)
-			testBool(*ft_c0_ret== *std_c0_ret, __LINE__);
+			testBool(ft_c0_ret == ft_c0.end(), __FILE__, __LINE__);
+		else if (testBool(ft_c0_ret != ft_c0.end(), __FILE__, __LINE__) == true)
+			testBool(*ft_c0_ret== *std_c0_ret, __FILE__, __LINE__);
 
 		std::cout << HEADER_TITLE << "[ Test lower_bound with empty set ]" << RESET_COLOR << std::endl;
 		ft_c0.clear();
@@ -90,9 +90,9 @@ test_set_lower_bound( void )	{
 		ft_c0_ret = ft_c0.lower_bound(42);
 
 		if (std_c0_ret == std_c0.end())
-			testBool(ft_c0_ret == ft_c0.end(), __LINE__);
-		else if (testBool(ft_c0_ret != ft_c0.end(), __LINE__) == true)
-			testBool(*ft_c0_ret== *std_c0_ret, __LINE__);
+			testBool(ft_c0_ret == ft_c0.end(), __FILE__, __LINE__);
+		else if (testBool(ft_c0_ret != ft_c0.end(), __FILE__, __LINE__) == true)
+			testBool(*ft_c0_ret== *std_c0_ret, __FILE__, __LINE__);
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: bvalette <bvalette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 16:02:32 by bvalette          #+#    #+#             */
-/*   Updated: 2021/05/27 15:36:14 by bvalette         ###   ########.fr       */
+/*   Updated: 2021/07/02 14:32:43 by bvalette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,11 @@ test_list_splice( void )	{
 		testList(ftl1, stdl1, NOPRINT);
 
 		std::cout << SUBTITLE << "[ check the address of the spliced element, it should remain similar ]" << RESET_COLOR << std::endl;
-		testBool( ft_ptr_splicedElem ==  &(*ftl1.begin()),__LINE__);
-		testBool( std_ptr_splicedElem ==  &(*stdl1.begin()),__LINE__);
+		testBool( ft_ptr_splicedElem ==  &(*ftl1.begin()), __FILE__,__LINE__);
+		testBool( std_ptr_splicedElem ==  &(*stdl1.begin()), __FILE__,__LINE__);
 		std::cout << SUBTITLE << "[ check if previously list 0 iterator does iterate on list 1 now ]" << RESET_COLOR << std::endl;
-		testBool( *(++ft_itl0) == "bye!" , __LINE__);
-		testBool( *(++std_itl0) == "bye!" , __LINE__);
+		testBool( *(++ft_itl0) == "bye!" , __FILE__, __LINE__);
+		testBool( *(++std_itl0) == "bye!" , __FILE__, __LINE__);
 	}
 	{
 		std::cout << HEADER_TITLE << "[ list 0 with 5 HelloWorld, list 1 with 5 Bye! ]" << RESET_COLOR << std::endl;
@@ -100,8 +100,8 @@ test_list_splice( void )	{
 		testList(ftl1, stdl1, NOPRINT);
 
 		std::cout << SUBTITLE << "[ check the address of the spliced element, it should remain similar ]" << RESET_COLOR << std::endl;
-		testBool( ft_ptr_splicedElem ==  &(*ftl1.begin()),__LINE__);
-		testBool( std_ptr_splicedElem ==  &(*stdl1.begin()),__LINE__);
+		testBool( ft_ptr_splicedElem ==  &(*ftl1.begin()), __FILE__,__LINE__);
+		testBool( std_ptr_splicedElem ==  &(*stdl1.begin()), __FILE__,__LINE__);
 
 	}
 	{
@@ -128,8 +128,8 @@ test_list_splice( void )	{
 		testList(ftl1, stdl1,  NOPRINT);
 
 		std::cout << SUBTITLE << "[ check the address of the spliced element, it should remain similar ]" << RESET_COLOR << std::endl;
-		testBool( ft_ptr_splicedElem ==  &(*ftl1.begin()),__LINE__);
-		testBool( std_ptr_splicedElem ==  &(*stdl1.begin()),__LINE__);
+		testBool( ft_ptr_splicedElem ==  &(*ftl1.begin()), __FILE__,__LINE__);
+		testBool( std_ptr_splicedElem ==  &(*stdl1.begin()), __FILE__,__LINE__);
 	}
 	{
 		std::cout << HEADER_TITLE << "[ list 0 with 8 values '0', list 1 with 8 values '1' ]" << RESET_COLOR << std::endl;

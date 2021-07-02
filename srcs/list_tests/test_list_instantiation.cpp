@@ -6,7 +6,7 @@
 /*   By: bvalette <bvalette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 16:01:26 by bvalette          #+#    #+#             */
-/*   Updated: 2021/07/02 09:05:09 by bvalette         ###   ########.fr       */
+/*   Updated: 2021/07/02 14:32:43 by bvalette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,8 @@ test_list_instantiation( void )	{
 			testList(ftl0, stdl0, NOPRINT);
 			testList(ftl1, stdl1, NOPRINT);
 			std::cout << SUBTITLE << "[ check if begin points to a new elements ]" << RESET_COLOR << std::endl;
-			testBool(&(*ftl0.begin()) != &(*ftl1.begin()), __LINE__);
-			testBool(&(*stdl0.begin()) != &(*stdl1.begin()), __LINE__);
+			testBool(&(*ftl0.begin()) != &(*ftl1.begin()), __FILE__, __LINE__);
+			testBool(&(*stdl0.begin()) != &(*stdl1.begin()), __FILE__, __LINE__);
 
 
 			ftl0.push_front(42);
@@ -100,7 +100,7 @@ test_list_instantiation( void )	{
 			std_it--;
 			ft_it--;
 			std_it--;
-			testBool(*ft_it == *std_it, __LINE__);
+			testBool(*ft_it == *std_it, __FILE__, __LINE__);
 
 				{
 					ft::list<int>::reverse_iterator		ft_it = ftl0.rbegin();
@@ -115,7 +115,7 @@ test_list_instantiation( void )	{
 					std_it++;
 					ft_it++;
 					std_it++;
-					testBool(*ft_it == *std_it, __LINE__);
+					testBool(*ft_it == *std_it, __FILE__, __LINE__);
 			}
 		}
 	}

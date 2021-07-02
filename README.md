@@ -62,6 +62,8 @@ Note: this test assumes you have implemented your own ft::pair (as you should).
 
 Note: Each tester will stop at the first failure (except tests performed on max_size of some containers as their result may vary with OS, and may reflect some personnal decision on implementation which may be valid and yield to variation with STL).
 
+- In order to use the tester with valgrind or fsanitize, some tests need to reduce their memory size. Use `make valgrind_mode=1` To compile the tester with such smaller tests
+
 ## ⚠️  Acknowledgement <a name = "acknowledgement"></a>
 
 Please note this test is based on my own work, you should use it as a complement of your own testes. First because it might be wrong on some points, second because you will learn much more by doing your tester than doing the project itself: you will learn how to use the STL's version, its limitations, its power etc. ... 

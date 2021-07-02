@@ -6,7 +6,7 @@
 /*   By: bvalette <bvalette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 15:37:34 by bvalette          #+#    #+#             */
-/*   Updated: 2021/06/09 17:46:32 by bvalette         ###   ########.fr       */
+/*   Updated: 2021/07/02 14:32:43 by bvalette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ test_set_const_equal_range(int findKey, std::set<exampleClass> const std_c0, ft:
 		ft::pair< ft::set<exampleClass>::const_iterator, ft::set<exampleClass>::const_iterator>		ft_c0_ret = ft_c0.equal_range(findKey);
 
 		if (std_c0_ret.first == std_c0.end())
-			testBool(ft_c0_ret.first == ft_c0.end(), __LINE__);
+			testBool(ft_c0_ret.first == ft_c0.end(), __FILE__, __LINE__);
 		if (std_c0_ret.second == std_c0.end())
-			testBool(ft_c0_ret.second == ft_c0.end(), __LINE__);
+			testBool(ft_c0_ret.second == ft_c0.end(), __FILE__, __LINE__);
 		if (ft_c0_ret.first != ft_c0.end())
-			testBool(*(ft_c0_ret.first)== *(std_c0_ret.first), __LINE__);
+			testBool(*(ft_c0_ret.first)== *(std_c0_ret.first), __FILE__, __LINE__);
 		if (ft_c0_ret.second != ft_c0.end())
-			testBool(*(ft_c0_ret.second)== *(std_c0_ret.second), __LINE__);
+			testBool(*(ft_c0_ret.second)== *(std_c0_ret.second), __FILE__, __LINE__);
 }
 
 int
@@ -59,13 +59,13 @@ test_set_equal_range( void )	{
 		ft::pair< ft::set<exampleClass>::iterator, ft::set<exampleClass>::iterator>		ft_c0_ret = ft_c0.equal_range(findKey);
 
 		if (std_c0_ret.first == std_c0.end())
-			testBool(ft_c0_ret.first == ft_c0.end(), __LINE__);
+			testBool(ft_c0_ret.first == ft_c0.end(), __FILE__, __LINE__);
 		if (std_c0_ret.second == std_c0.end())
-			testBool(ft_c0_ret.second == ft_c0.end(), __LINE__);
+			testBool(ft_c0_ret.second == ft_c0.end(), __FILE__, __LINE__);
 		if (ft_c0_ret.first != ft_c0.end())
-			testBool(*(ft_c0_ret.first)== *(std_c0_ret.first), __LINE__);
+			testBool(*(ft_c0_ret.first)== *(std_c0_ret.first), __FILE__, __LINE__);
 		if (ft_c0_ret.second != ft_c0.end())
-			testBool(*(ft_c0_ret.second)== *(std_c0_ret.second), __LINE__);
+			testBool(*(ft_c0_ret.second)== *(std_c0_ret.second), __FILE__, __LINE__);
 
 		test_set_const_equal_range(findKey, std_c0, ft_c0);
 
@@ -74,26 +74,26 @@ test_set_equal_range( void )	{
 		ft_c0_ret = ft_c0.equal_range(testSize * 2);
 
 		if (std_c0_ret.first == std_c0.end())
-			testBool(ft_c0_ret.first == ft_c0.end(), __LINE__);
+			testBool(ft_c0_ret.first == ft_c0.end(), __FILE__, __LINE__);
 		if (std_c0_ret.second == std_c0.end())
-			testBool(ft_c0_ret.second == ft_c0.end(), __LINE__);
+			testBool(ft_c0_ret.second == ft_c0.end(), __FILE__, __LINE__);
 		if (ft_c0_ret.first != ft_c0.end())
-			testBool(*(ft_c0_ret.first)== *(std_c0_ret.first), __LINE__);
+			testBool(*(ft_c0_ret.first)== *(std_c0_ret.first), __FILE__, __LINE__);
 		if (ft_c0_ret.second != ft_c0.end())
-			testBool(*(ft_c0_ret.second)== *(std_c0_ret.second), __LINE__);
+			testBool(*(ft_c0_ret.second)== *(std_c0_ret.second), __FILE__, __LINE__);
 
 		std::cout << HEADER_TITLE << "[ Test equal_range with a value absent from the set (lower than the lowest key)]" << RESET_COLOR << std::endl;
 		std_c0_ret = std_c0.equal_range(-42);
 		ft_c0_ret = ft_c0.equal_range(-42);
 
 		if (std_c0_ret.first == std_c0.end())
-			testBool(ft_c0_ret.first == ft_c0.end(), __LINE__);
+			testBool(ft_c0_ret.first == ft_c0.end(), __FILE__, __LINE__);
 		if (std_c0_ret.second == std_c0.end())
-			testBool(ft_c0_ret.second == ft_c0.end(), __LINE__);
+			testBool(ft_c0_ret.second == ft_c0.end(), __FILE__, __LINE__);
 		if (ft_c0_ret.first != ft_c0.end())
-			testBool(*(ft_c0_ret.first)== *(std_c0_ret.first), __LINE__);
+			testBool(*(ft_c0_ret.first)== *(std_c0_ret.first), __FILE__, __LINE__);
 		if (ft_c0_ret.second != ft_c0.end())
-			testBool(*(ft_c0_ret.second)== *(std_c0_ret.second), __LINE__);
+			testBool(*(ft_c0_ret.second)== *(std_c0_ret.second), __FILE__, __LINE__);
 
 		std::cout << HEADER_TITLE << "[ Test equal_range with empty set ]" << RESET_COLOR << std::endl;
 		ft_c0.clear();
@@ -104,13 +104,13 @@ test_set_equal_range( void )	{
 		ft_c0_ret = ft_c0.equal_range(42);
 
 		if (std_c0_ret.first == std_c0.end())
-			testBool(ft_c0_ret.first == ft_c0.end(), __LINE__);
+			testBool(ft_c0_ret.first == ft_c0.end(), __FILE__, __LINE__);
 		if (std_c0_ret.second == std_c0.end())
-			testBool(ft_c0_ret.second == ft_c0.end(), __LINE__);
+			testBool(ft_c0_ret.second == ft_c0.end(), __FILE__, __LINE__);
 		if (ft_c0_ret.first != ft_c0.end())
-			testBool(*(ft_c0_ret.first)== *(std_c0_ret.first), __LINE__);
+			testBool(*(ft_c0_ret.first)== *(std_c0_ret.first), __FILE__, __LINE__);
 		if (ft_c0_ret.second != ft_c0.end())
-			testBool(*(ft_c0_ret.second)== *(std_c0_ret.second), __LINE__);
+			testBool(*(ft_c0_ret.second)== *(std_c0_ret.second), __FILE__, __LINE__);
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: bvalette <bvalette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 09:50:31 by bvalette          #+#    #+#             */
-/*   Updated: 2021/07/01 12:10:35 by bvalette         ###   ########.fr       */
+/*   Updated: 2021/07/02 15:13:52 by bvalette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ test_deque_instantiation( void )	{
 				try {
 					ft::deque<int>		ft_c0(ft::deque<int>().max_size() + 1);
 					std::cout << ERROR_SOURCE << "SHOULD HAVE THROW A BAD ALLOC..." << RESET_COLOR << std::endl;
-					testBool(false, __LINE__);
+					testBool(false, __FILE__, __LINE__);
 				}
 				catch(const std::exception& e)	{
 					std::cout << "Exception catched: " << e.what() << " -- ";
@@ -96,7 +96,7 @@ test_deque_instantiation( void )	{
 
 			std::cout << SUBTITLE << "[ check if begin points to a new elements ]" << RESET_COLOR << std::endl;
 			testBool(&(*std_c0.begin()) != &(*std_c1.begin())
-				&& &(*ft_c0.begin()) != &(*ft_c1.begin()), __LINE__);
+				&& &(*ft_c0.begin()) != &(*ft_c1.begin()), __FILE__, __LINE__);
 		}
 		std::cout << SUBTITLE << "[ COPY CONSTRUCTOR from deque with no elements]" << RESET_COLOR << std::endl;
 		{

@@ -6,7 +6,7 @@
 /*   By: bvalette <bvalette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 16:01:36 by bvalette          #+#    #+#             */
-/*   Updated: 2021/05/31 15:21:53 by bvalette         ###   ########.fr       */
+/*   Updated: 2021/07/02 14:32:43 by bvalette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,10 @@ test_list_member_swap( void )	{
 		testList(ftl1, stdl1, NOPRINT, "Test list1");
 
 		std::cout << SUBTITLE << "[ test if iterator stayed valid while pointing to new values ]" << RESET_COLOR << std::endl;
-		testBool(&(*ft_it0) == &(*ftl1.begin()), __LINE__);
-		testBool(&(*ft_it1) == &(*ftl0.begin()), __LINE__);
-		testBool(&(*std_it0) == &(*stdl1.begin()), __LINE__);
-		testBool(&(*std_it1) == &(*stdl0.begin()), __LINE__);
+		testBool(&(*ft_it0) == &(*ftl1.begin()), __FILE__, __LINE__);
+		testBool(&(*ft_it1) == &(*ftl0.begin()), __FILE__, __LINE__);
+		testBool(&(*std_it0) == &(*stdl1.begin()), __FILE__, __LINE__);
+		testBool(&(*std_it1) == &(*stdl0.begin()), __FILE__, __LINE__);
 
 		std::cout << SUBTITLE << "[ assign list 1 with 10 value 99 ]" << RESET_COLOR << std::endl;
 		ftl1.assign(10, 99);

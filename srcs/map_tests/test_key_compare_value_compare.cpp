@@ -6,7 +6,7 @@
 /*   By: bvalette <bvalette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 14:46:24 by bvalette          #+#    #+#             */
-/*   Updated: 2021/06/09 17:09:26 by bvalette         ###   ########.fr       */
+/*   Updated: 2021/07/02 14:50:29 by bvalette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ test_value_compare(ft::map<Key, T>& ft_c0, std::map<Key, T>& std_c0)	{
 	std::map<char,int>::iterator	std_it = std_c0.begin();
 	ft::map<char,int>::iterator		ft_it = ft_c0.begin();
 	do {
-		testBool(std_c0.value_comp()(*std_it++, std_highest) == true
-				&& ft_c0.value_comp()(*ft_it++, ft_highest) == true, __LINE__);
+		testBool(std_c0.value_comp()(*std_it++,  std_highest) == true
+				&& ft_c0.value_comp()(*ft_it++, ft_highest) == true,__FILE__, __LINE__);
 	} while ( std_it != --std_c0.end() && ft_it != --ft_c0.end());
-	testBool((std_c0.value_comp()(*std_it++, std_highest) == false)
-			&& (ft_c0.value_comp()(*ft_it++, ft_highest) == false), __LINE__);
-	testBool((std_c0.value_comp()((*std_it), (*std_it--)) == false
-			&& ft_c0.value_comp()((*ft_it), (*ft_it--)) == false), __LINE__);
+	testBool((std_c0.value_comp()(*std_it++,  std_highest) == false)
+			&& (ft_c0.value_comp()(*ft_it++, ft_highest) == false),__FILE__, __LINE__);
+	testBool((std_c0.value_comp()((*std_it),  (*std_it--)) == false
+			&& ft_c0.value_comp()((*ft_it), (*ft_it--)) == false),__FILE__, __LINE__);
 }
 
 template< typename Key, typename T>
@@ -49,13 +49,13 @@ test_key_compare(ft::map<Key, T>& ft_c0, std::map<Key, T>& std_c0)	{
 	std::map<char,int>::iterator std_it = std_c0.begin();
 	ft::map<char,int>::iterator ft_it = ft_c0.begin();
 	do {
-		testBool(std_cmp((*std_it++).first, std_highest) == true
-				&& ft_cmp((*ft_it++).first, ft_highest) == true, __LINE__);
+		testBool(std_cmp((*std_it++).first,  std_highest) == true
+				&& ft_cmp((*ft_it++).first, ft_highest) == true,__FILE__, __LINE__);
 	} while ( std_it != --std_c0.end() && ft_it != --ft_c0.end());
-	testBool((std_cmp((*std_it++).first, std_highest) == false)
-			&& (ft_cmp((*ft_it++).first, ft_highest) == false), __LINE__);
-	testBool((std_cmp((*std_it).first, (*std_it--).first) == false)
-			&& (ft_cmp((*ft_it).first, (*ft_it--).first) == false), __LINE__);
+	testBool((std_cmp((*std_it++).first,  std_highest) == false)
+			&& (ft_cmp((*ft_it++).first, ft_highest) == false),__FILE__, __LINE__);
+	testBool((std_cmp((*std_it).first,  (*std_it--).first) == false)
+			&& (ft_cmp((*ft_it).first, (*ft_it--).first) == false),__FILE__, __LINE__);
 }
 
 int

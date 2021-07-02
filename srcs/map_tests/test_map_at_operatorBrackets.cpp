@@ -21,19 +21,19 @@ test_basic_brackets()	{
 		std::map<int, exampleClass>		std_c0;
 		ft::map<int, exampleClass>		ft_c0;
 
-		testBool(ft_c0[42] == std_c0[42], __LINE__);
+		testBool(ft_c0[42] == std_c0[42], __FILE__, __LINE__);
 		ft_c0[42] = 21;
 		std_c0[42] = 21;
-		testBool(ft_c0[42] == std_c0[42], __LINE__);
+		testBool(ft_c0[42] == std_c0[42], __FILE__, __LINE__);
 		ft_c0[42] = 1;
 		std_c0[42] = 1;
-		testBool(ft_c0[42] == std_c0[42], __LINE__);
+		testBool(ft_c0[42] == std_c0[42], __FILE__, __LINE__);
 		ft_c0[42];
 		std_c0[42];
-		testBool(ft_c0[42] == std_c0[42], __LINE__);
+		testBool(ft_c0[42] == std_c0[42], __FILE__, __LINE__);
 		ft_c0[-42];
 		std_c0[-42];
-		testBool(ft_c0[-42] == std_c0[-42], __LINE__);
+		testBool(ft_c0[-42] == std_c0[-42], __FILE__, __LINE__);
 }
 
 template<typename T_FT, typename T_STD>
@@ -73,7 +73,7 @@ test_brackets(void)	{
 		for (int i = 0; it != ite && success == true; i++, it++)	{
 			success = (ft_c0[*it] == std_c0[*it]);
 		}
-		testBool(success, __LINE__);
+		testBool(success, __FILE__, __LINE__);
 	}
 }
 

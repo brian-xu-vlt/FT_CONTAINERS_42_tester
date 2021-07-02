@@ -6,7 +6,7 @@
 /*   By: bvalette <bvalette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 09:56:19 by bvalette          #+#    #+#             */
-/*   Updated: 2021/07/02 14:22:41 by bvalette         ###   ########.fr       */
+/*   Updated: 2021/07/02 14:54:53 by bvalette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,10 @@ test_max_size()	{
 	size_t ft_c0 = ft::set<const T>().max_size();
 	std::cout << "Sizes returned : ft("<< ft_c0 <<") std("<< std_c0 <<")" << RESET_COLOR << std::endl;
 	try {
-		testBool(std_c0 == ft_c0, __LINE__);
+		testBool(std_c0 == ft_c0, __FILE__, __LINE__);
 	}
 	catch (failedTest &e) {
-		std::cout << ERROR_TITLE << "Sizes returned : ft("<< ft_c0/100000000000000 <<") std("<< std_c0/100000000000000 <<")" << RESET_COLOR << std::endl;
+		std::cout << ERROR_TITLE << "Sizes returned : ft("<< ft_c0/100000000000000 <<"...) std("<< std_c0/100000000000000 <<"...)" << RESET_COLOR << std::endl;
 		throw failedTest();
 	}
 }
@@ -87,15 +87,15 @@ test_set_capacities( void )	{
 		std::cout << HEADER_TITLE << "[ Empty / size on empty set ]" << RESET_COLOR << std::endl;
 		std::set<int>		std_c0;
 		ft::set<int>		ft_c0;
-		testBool(std_c0.empty() == ft_c0.empty(), __LINE__);
-		testBool(std_c0.size() == ft_c0.size(), __LINE__);
+		testBool(std_c0.empty() == ft_c0.empty(), __FILE__, __LINE__);
+		testBool(std_c0.size() == ft_c0.size(), __FILE__, __LINE__);
 
 		std::cout << HEADER_TITLE << "[ Empty / size on non empty set ]" << RESET_COLOR << std::endl;
 		for(int i = 0; i < static_cast<int>(testSize); i++)	{
 			std_c0.insert(i);
 			ft_c0.insert(i);
-			testBool(std_c0.empty() == ft_c0.empty(), __LINE__, i);
-			testBool(std_c0.size() == ft_c0.size(), __LINE__, i);
+			testBool(std_c0.empty() == ft_c0.empty(), __FILE__, __LINE__, i);
+			testBool(std_c0.size() == ft_c0.size(), __FILE__, __LINE__, i);
 		}
 	}
 	std::cout << HEADER_TITLE << "[ Max Size with various types ]" << RESET_COLOR << std::endl;

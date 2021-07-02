@@ -6,7 +6,7 @@
 /*   By: bvalette <bvalette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 11:53:44 by bvalette          #+#    #+#             */
-/*   Updated: 2021/06/09 17:47:45 by bvalette         ###   ########.fr       */
+/*   Updated: 2021/07/02 14:32:43 by bvalette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,9 +108,9 @@ testInserEraseAdvanced ( void )	{
 				ft_it = ft_c0.insert(ft_it, (val_insert - 1));
 
 				if (std_it == std_c0.end())
-					testBool(ft_it == ft_c0.end(), __LINE__);
-				else if (testBool(ft_it != ft_c0.end(), __LINE__) == true)
-					testBool(*ft_it == *std_it, __LINE__);
+					testBool(ft_it == ft_c0.end(), __FILE__, __LINE__);
+				else if (testBool(ft_it != ft_c0.end(), __FILE__, __LINE__) == true)
+					testBool(*ft_it == *std_it, __FILE__, __LINE__);
 				testSet(ft_c0, std_c0, NOPRINT);
 				std_c0.erase(val_remove);
 				ft_c0.erase(val_remove);
@@ -142,7 +142,7 @@ testCppRefCode( void )	{
 	std::cout << HEADER_TITLE << "[ Test boolean returned in a pair in case of pre existing element ]" << RESET_COLOR << std::endl;
 	std::pair<std::set<int>::iterator,bool> std_ret = std_c0.insert ( 500 );
 	ft::pair<ft::set<int>::iterator,bool> ft_ret = ft_c0.insert ( 500 );
-	testBool((std_ret.second == ft_ret.second), __LINE__);
+	testBool((std_ret.second == ft_ret.second), __FILE__, __LINE__);
 	testSet<int>(ft_c0, std_c0, NOPRINT);
 
 	std::cout << HEADER_TITLE << "[ Insert with hint ]" << RESET_COLOR << std::endl;
@@ -193,7 +193,7 @@ testBasicErase( void )	{
 		std_c0.erase(std_it);
 		ft_c0.erase(ft_it);
 		testSet<exampleClass>(ft_c0, std_c0, NOPRINT);
-		testBool( *(--std_ite) == *(--ft_ite) , __LINE__);
+		testBool( *(--std_ite) == *(--ft_ite) , __FILE__, __LINE__);
 		std_ite++;
 		ft_ite++;
 

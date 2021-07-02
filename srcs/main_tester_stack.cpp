@@ -6,7 +6,7 @@
 /*   By: bvalette <bvalette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 10:43:21 by bvalette          #+#    #+#             */
-/*   Updated: 2021/07/02 14:15:41 by bvalette         ###   ########.fr       */
+/*   Updated: 2021/07/02 15:12:39 by bvalette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ main( void )	{
 
 	std::cout << std::endl << std::endl;
 	std::cout << MAIN_TITLE << " CONTAINER TESTER ============= " << __func__ << RESET_COLOR << std::endl;
-	bool error_flag = true;
+	bool error_flag = false;
 	try {
 
 		try {test_stack_general();} catch(std::exception &e) { error_flag = true; }

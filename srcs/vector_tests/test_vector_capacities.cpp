@@ -6,7 +6,7 @@
 /*   By: bvalette <bvalette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 09:48:58 by bvalette          #+#    #+#             */
-/*   Updated: 2021/07/02 14:19:01 by bvalette         ###   ########.fr       */
+/*   Updated: 2021/07/02 14:32:43 by bvalette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ test_max_size(int line)	{
 	std::vector<T>		std_c0;
 	ft::vector<T>		ft_c0;
 	try {
-		testBool(std_c0.max_size() == ft_c0.max_size(), line);
+		testBool(std_c0.max_size() == ft_c0.max_size(), __FILE__, line);
 	}
 	catch (std::exception & e)	{
 
@@ -44,7 +44,7 @@ test_vector_capacities( void )	{
 		std::cout << "empty for std : " << std::boolalpha << std.empty() << std::endl;
 		std::cout << "empty for ft  : " << std::boolalpha << ft.empty() << std::endl;
 
-		testBool(std.empty() == ft.empty(), __LINE__);
+		testBool(std.empty() == ft.empty(), __FILE__, __LINE__);
 	}
 	{
 		size_t		testSize = 5;
@@ -55,13 +55,13 @@ test_vector_capacities( void )	{
 		std::cout << "Size of std : " << std.size() << std::endl;
 		std::cout << "Size of ft  : " << ft.size() << std::endl;
 
-		testBool(std.size() == ft.size(), __LINE__);
-		testBool(std.capacity() >= std.size() && ft.capacity() >= ft.size(), __LINE__);
+		testBool(std.size() == ft.size(), __FILE__, __LINE__);
+		testBool(std.capacity() >= std.size() && ft.capacity() >= ft.size(), __FILE__, __LINE__);
 
 		std::cout << "empty for std : " << std::boolalpha << std.empty() << std::endl;
 		std::cout << "empty for ft  : " << std::boolalpha << ft.empty() << std::endl;
 
-		testBool(std.empty() == ft.empty(), __LINE__);
+		testBool(std.empty() == ft.empty(), __FILE__, __LINE__);
 	}
 	{
 		size_t		testSize = 0;
@@ -70,7 +70,7 @@ test_vector_capacities( void )	{
 		ft::vector<float>		ft(testSize);
 		std::cout << "max_size for std : " << std.max_size() << std::endl;
 		std::cout << "max_size for ft  : " << ft.max_size() << std::endl;
-		testBool(std.max_size() == ft.max_size(), __LINE__);
+		testBool(std.max_size() == ft.max_size(), __FILE__, __LINE__);
 
 	}
 	// ------------ bool specialization not tested
@@ -81,7 +81,7 @@ test_vector_capacities( void )	{
 	// 	ft::vector<bool>		ft(testSize);
 	// 	std::cout << "Bool ft: " << ft.max_size() << std::endl;
 	// 	std::cout << "Bool std:" << std.max_size() << std::endl;
-	// 	testBool(std.max_size() == ft.max_size(), __LINE__);
+	// 	testBool(std.max_size() == ft.max_size(), __FILE__, __LINE__);
 	// 	std::cout << "bool : max_size for std : " << std.max_size() << std::endl;
 	// 	std::cout << "bool : max_size for ft  : " << ft.max_size() << std::endl;
 

@@ -85,19 +85,19 @@ test_deque_resize( void )	{
 				catch ( std::exception & e) {}
 				catch ( std::bad_alloc & e) {}
 			ft_c0.resize(testResize);
-			testBool( false, __LINE__);
+			testBool( false, __FILE__, __LINE__);
 		}
 		catch (  std::bad_alloc & e )	{
 			std::cout << "Exception thrown: std::bad_alloc, as it should." << std::endl;
-			testBool( true, __LINE__);
+			testBool( true, __FILE__, __LINE__);
 		}
 		catch (  std::exception & e )	{
 			std::cout << "Exception thrown: std::exception, should be bad_alloc but it's ok..." << std::endl;
-			testBool( true, __LINE__);
+			testBool( true, __FILE__, __LINE__);
 		}
 		catch (  std::length_error & e )	{
 			std::cout << "Exception thrown: std::length_error, Wrong !" << std::endl;
-			testBool( false, __LINE__);
+			testBool( false, __FILE__, __LINE__);
 		}
 	}
 	return (0);

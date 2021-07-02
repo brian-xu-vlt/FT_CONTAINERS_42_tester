@@ -6,7 +6,7 @@
 /*   By: bvalette <bvalette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 16:01:21 by bvalette          #+#    #+#             */
-/*   Updated: 2021/05/31 15:08:07 by bvalette         ###   ########.fr       */
+/*   Updated: 2021/07/02 14:32:43 by bvalette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ test_list_insert_erase( void )	{
 		std::string	val("helloworld");
 
 		std::cout << SUBTITLE << "[ Insert with single element insert(iterator, val) and check return iterator ]" << RESET_COLOR << std::endl;
-		testBool( *(ftl0.insert(ftl0.end(), val)) == *(stdl0.insert(stdl0.end(), val)), __LINE__);
+		testBool( *(ftl0.insert(ftl0.end(), val)) == *(stdl0.insert(stdl0.end(), val)), __FILE__, __LINE__);
 		testList(ftl0, stdl0, NOPRINT);
-		testBool( *(ftl0.insert(ftl0.begin(), val)) == *(stdl0.insert(stdl0.begin(), val)), __LINE__);
+		testBool( *(ftl0.insert(ftl0.begin(), val)) == *(stdl0.insert(stdl0.begin(), val)), __FILE__, __LINE__);
 		testList(ftl0, stdl0, NOPRINT);
 
 		std::cout << SUBTITLE << "[ Insert with insert(iterator, size_t, value_type) ]" << RESET_COLOR << std::endl;

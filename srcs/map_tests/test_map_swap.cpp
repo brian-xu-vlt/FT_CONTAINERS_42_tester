@@ -6,7 +6,7 @@
 /*   By: bvalette <bvalette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 14:42:32 by bvalette          #+#    #+#             */
-/*   Updated: 2021/05/20 14:42:33 by bvalette         ###   ########.fr       */
+/*   Updated: 2021/07/02 14:32:43 by bvalette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,21 @@ test_basic_member_swap(  ft::map<int , int>& ft_c0, ft::map<int , int>& ft_c1, s
 
 		std::cout << SUBTITLE << "[ test if iterator stayed valid while pointing to new values ]" << RESET_COLOR << std::endl;
 		if (ft_c1.empty() == false)
-			testBool(ft_it0->first == ft_c1.begin()->first, __LINE__);
+			testBool(ft_it0->first == ft_c1.begin()->first, __FILE__, __LINE__);
 		if (ft_c0.empty() == false)
-			testBool(ft_it1->first == ft_c0.begin()->first, __LINE__);
+			testBool(ft_it1->first == ft_c0.begin()->first, __FILE__, __LINE__);
 		if (std_c1.empty() == false)
-			testBool(std_it0->first == std_c1.begin()->first, __LINE__);
+			testBool(std_it0->first == std_c1.begin()->first, __FILE__, __LINE__);
 		if (std_c0.empty() == false)
-			testBool(std_it1->first == std_c0.begin()->first, __LINE__);
+			testBool(std_it1->first == std_c0.begin()->first, __FILE__, __LINE__);
 		if (ft_c1.empty() == false)
-			testBool(ft_it0->second == ft_c1.begin()->second, __LINE__);
+			testBool(ft_it0->second == ft_c1.begin()->second, __FILE__, __LINE__);
 		if (ft_c0.empty() == false)
-			testBool(ft_it1->second == ft_c0.begin()->second, __LINE__);
+			testBool(ft_it1->second == ft_c0.begin()->second, __FILE__, __LINE__);
 		if (std_c1.empty() == false)
-			testBool(std_it0->second == std_c1.begin()->second, __LINE__);
+			testBool(std_it0->second == std_c1.begin()->second, __FILE__, __LINE__);
 		if (std_c0.empty() == false)
-			testBool(std_it1->second == std_c0.begin()->second, __LINE__);
+			testBool(std_it1->second == std_c0.begin()->second, __FILE__, __LINE__);
 }
 
 void
@@ -60,21 +60,21 @@ test_basic_non_member_swap(  ft::map<int , int>& ft_c0, ft::map<int , int>& ft_c
 
 		std::cout << SUBTITLE << "[ test if iterator stayed valid while pointing to new values ]" << RESET_COLOR << std::endl;
 		if (ft_c1.empty() == false)
-			testBool(ft_it0->first == ft_c1.begin()->first, __LINE__);
+			testBool(ft_it0->first == ft_c1.begin()->first, __FILE__, __LINE__);
 		if (ft_c0.empty() == false)
-			testBool(ft_it1->first == ft_c0.begin()->first, __LINE__);
+			testBool(ft_it1->first == ft_c0.begin()->first, __FILE__, __LINE__);
 		if (std_c1.empty() == false)
-			testBool(std_it0->first == std_c1.begin()->first, __LINE__);
+			testBool(std_it0->first == std_c1.begin()->first, __FILE__, __LINE__);
 		if (std_c0.empty() == false)
-			testBool(std_it1->first == std_c0.begin()->first, __LINE__);
+			testBool(std_it1->first == std_c0.begin()->first, __FILE__, __LINE__);
 		if (ft_c1.empty() == false)
-			testBool(ft_it0->second == ft_c1.begin()->second, __LINE__);
+			testBool(ft_it0->second == ft_c1.begin()->second, __FILE__, __LINE__);
 		if (ft_c0.empty() == false)
-			testBool(ft_it1->second == ft_c0.begin()->second, __LINE__);
+			testBool(ft_it1->second == ft_c0.begin()->second, __FILE__, __LINE__);
 		if (std_c1.empty() == false)
-			testBool(std_it0->second == std_c1.begin()->second, __LINE__);
+			testBool(std_it0->second == std_c1.begin()->second, __FILE__, __LINE__);
 		if (std_c0.empty() == false)
-			testBool(std_it1->second == std_c0.begin()->second, __LINE__);
+			testBool(std_it1->second == std_c0.begin()->second, __FILE__, __LINE__);
 }
 
 int

@@ -6,7 +6,7 @@
 /*   By: bvalette <bvalette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 09:52:27 by bvalette          #+#    #+#             */
-/*   Updated: 2021/05/31 10:52:03 by bvalette         ###   ########.fr       */
+/*   Updated: 2021/07/02 14:32:43 by bvalette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,10 @@ test_vector_nonmember_swap( void )	{
 		testVector(ft_c1, std_c1, NOPRINT, "Test vector1");
 
 		std::cout << SUBTITLE << "[ test if iterator stayed valid while pointing to new values ]" << RESET_COLOR << std::endl;
-		testBool(&(*ft_it0) == &(*ft_c1.begin()), __LINE__);
-		testBool(&(*ft_it1) == &(*ft_c0.begin()), __LINE__);
-		testBool(&(*std_it0) == &(*std_c1.begin()), __LINE__);
-		testBool(&(*std_it1) == &(*std_c0.begin()), __LINE__);
+		testBool(&(*ft_it0) == &(*ft_c1.begin()), __FILE__, __LINE__);
+		testBool(&(*ft_it1) == &(*ft_c0.begin()), __FILE__, __LINE__);
+		testBool(&(*std_it0) == &(*std_c1.begin()), __FILE__, __LINE__);
+		testBool(&(*std_it1) == &(*std_c0.begin()), __FILE__, __LINE__);
 
 		std::cout << SUBTITLE << "[ assign vector 1 with 10 value 99 ]" << RESET_COLOR << std::endl;
 		ft_c1.assign(10, 99);

@@ -6,7 +6,7 @@
 /*   By: bvalette <bvalette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 09:51:42 by bvalette          #+#    #+#             */
-/*   Updated: 2021/06/08 14:49:46 by bvalette         ###   ########.fr       */
+/*   Updated: 2021/07/02 14:32:43 by bvalette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ testReserve(size_t testSize, ft::vector<int> & ft_c0, std::vector<int> & std_c0)
 		std_c0.reserve(testSize);
 		testVector(ft_c0, std_c0, NOPRINT);
 		std::cout << "New Capacities after reserve: ft(" << ft_c0.capacity() << ") ; std(" << std_c0.capacity() << ")" << std::endl;
-		testBool(ft_c0.capacity() >= testSize && std_c0.capacity() >= testSize, __LINE__);
+		testBool(ft_c0.capacity() >= testSize && std_c0.capacity() >= testSize, __FILE__, __LINE__);
 }
 
 template < typename T >
@@ -98,19 +98,19 @@ test_vector_resize( void )	{
 		try {
 			std::cout << SUBTITLE << "[ FT: resize("<< ft_c0.max_size() << ") Max size, will throw exception ]" << RESET_COLOR << std::endl;
 			ft_c0.resize(ft_c0.max_size());
-			testBool( false, __LINE__);
+			testBool( false, __FILE__, __LINE__);
 		}
 		catch (  std::bad_alloc & e )	{
 			std::cout << "Exception thrown: std::bad_alloc, as it should." << std::endl;
-			testBool( true, __LINE__);
+			testBool( true, __FILE__, __LINE__);
 		}
 		catch (  std::exception & e )	{
 			std::cout << "Exception thrown: std::exception, should be bad_alloc but it's ok..." << std::endl;
-			testBool( true, __LINE__);
+			testBool( true, __FILE__, __LINE__);
 		}
 		catch (  std::length_error & e )	{
 			std::cout << "Exception thrown: std::length_error, Wrong !" << std::endl;
-			testBool( false, __LINE__);
+			testBool( false, __FILE__, __LINE__);
 		}
 	}
 	{
@@ -132,7 +132,7 @@ test_vector_resize( void )	{
 			try { std_c0.reserve(sizeReserve); } catch ( std::exception & e) {};
 			ft_c0.reserve(sizeReserve);
 			std::cout << "No Exception was thrown ! It should have !" << std::endl;
-			testBool( false, __LINE__);
+			testBool( false, __FILE__, __LINE__);
 		}
 		catch (  std::length_error & e )	{
 			std::cout << "Exception thrown: std::length_error, as it should." << std::endl;

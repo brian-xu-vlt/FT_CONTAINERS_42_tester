@@ -6,7 +6,7 @@
 /*   By: bvalette <bvalette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 09:04:41 by bvalette          #+#    #+#             */
-/*   Updated: 2021/05/21 09:47:22 by bvalette         ###   ########.fr       */
+/*   Updated: 2021/07/02 14:32:43 by bvalette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ test_basic_operator_equal(  ft::map<int , int>& ft_c0, ft::map<int , int>& ft_c1
 
 		std::cout << SUBTITLE << "[ test if iterator stayed valid after = ]" << RESET_COLOR << std::endl;
 		if (std_c1.empty() == false)
-			testBool(*std_it1 == *std_c1.begin(), __LINE__);
+			testBool(*std_it1 == *std_c1.begin(), __FILE__, __LINE__);
 		if (ft_c1.empty() == false)
-			testBool(*ft_it1 == *ft_c1.begin(), __LINE__);
+			testBool(*ft_it1 == *ft_c1.begin(), __FILE__, __LINE__);
 }
 
 int

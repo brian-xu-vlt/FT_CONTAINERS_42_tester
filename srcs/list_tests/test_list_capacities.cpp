@@ -6,7 +6,7 @@
 /*   By: bvalette <bvalette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 08:43:18 by bvalette          #+#    #+#             */
-/*   Updated: 2021/07/02 14:18:11 by bvalette         ###   ########.fr       */
+/*   Updated: 2021/07/02 14:32:43 by bvalette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ test_max_size(int line)	{
 	std::list<T>	std_c0;
 	ft::list<T>		ft_c0;
 	try {
-		testBool(std_c0.max_size() == ft_c0.max_size(), line);
+		testBool(std_c0.max_size() == ft_c0.max_size(), __FILE__, line);
 	}
 	catch (std::exception & e)	{
 
@@ -44,7 +44,7 @@ test_list_capacities( void )	{
 		std::cout << "empty for std : " << std::boolalpha << std.empty() << std::endl;
 		std::cout << "empty for ft  : " << std::boolalpha << ft.empty() << std::endl;
 
-		testBool(std.empty() == ft.empty(), __LINE__);
+		testBool(std.empty() == ft.empty(), __FILE__, __LINE__);
 	}
 	{
 		size_t		testSize = 5;
@@ -55,12 +55,12 @@ test_list_capacities( void )	{
 		std::cout << "Size of std : " << std.size() << std::endl;
 		std::cout << "Size of ft  : " << ft.size() << std::endl;
 
-		testBool(std.size() == ft.size(), __LINE__);
+		testBool(std.size() == ft.size(), __FILE__, __LINE__);
 
 		std::cout << "empty for std : " << std::boolalpha << std.empty() << std::endl;
 		std::cout << "empty for ft  : " << std::boolalpha << ft.empty() << std::endl;
 
-		testBool(std.empty() == ft.empty(), __LINE__);
+		testBool(std.empty() == ft.empty(), __FILE__, __LINE__);
 	}
 	std::cout << HEADER_TITLE << "[ Max Size with various types ]" << RESET_COLOR << std::endl;
 	test_max_size<bool>(__LINE__);

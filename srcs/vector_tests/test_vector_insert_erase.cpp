@@ -6,7 +6,7 @@
 /*   By: bvalette <bvalette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 09:50:19 by bvalette          #+#    #+#             */
-/*   Updated: 2021/06/08 14:08:13 by bvalette         ###   ########.fr       */
+/*   Updated: 2021/07/02 14:37:08 by bvalette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,37 +26,37 @@ testInsert ( void )	{
 
 		ft_ret = ft_c0.insert(ft_c0.begin(), "A");
 		std_ret = std_c0.insert(std_c0.begin(), "A");
-		testBool(*ft_ret == *std_ret, __LINE__);
+		testBool(*ft_ret == *std_ret, __FILE__, __LINE__);
 		testVector(ft_c0, std_c0, NOPRINT);
 
 		ft_ret = ft_c0.insert(ft_c0.begin(), "B");
 		std_ret = std_c0.insert(std_c0.begin(), "B");
-		testBool(*ft_ret == *std_ret, __LINE__);
+		testBool(*ft_ret == *std_ret, __FILE__, __LINE__);
 		testVector(ft_c0, std_c0, NOPRINT);
 
 		ft_ret = ft_c0.insert(++ft_c0.begin(), "42");
 		std_ret = std_c0.insert(++std_c0.begin(), "42");
-		testBool(*ft_ret == *std_ret, __LINE__);
+		testBool(*ft_ret == *std_ret, __FILE__, __LINE__);
 		testVector(ft_c0, std_c0, NOPRINT);
 
 		ft_ret = ft_c0.insert(--ft_c0.end(), "The End...");
 		std_ret = std_c0.insert(--std_c0.end(), "The End...");
-		testBool(*ft_ret == *std_ret, __LINE__);
+		testBool(*ft_ret == *std_ret, __FILE__, __LINE__);
 		testVector(ft_c0, std_c0, NOPRINT);
 
 		ft_ret = ft_c0.insert(ft_c0.end(), "End...");
 		std_ret = std_c0.insert(std_c0.end(), "End...");
-		testBool(*ft_ret == *std_ret, __LINE__);
+		testBool(*ft_ret == *std_ret, __FILE__, __LINE__);
 		testVector(ft_c0, std_c0, NOPRINT);
 
 		ft_ret = ft_c0.insert(ft_c0.begin() + ft_c0.size() / 2, "middle...");
 		std_ret = std_c0.insert(std_c0.begin() + std_c0.size() / 2, "middle...");
-		testBool(*ft_ret == *std_ret, __LINE__);
+		testBool(*ft_ret == *std_ret, __FILE__, __LINE__);
 		testVector(ft_c0, std_c0, NOPRINT);
 
 
 		std::cout << SUBTITLE << "[ test return of insert function ]" << RESET_COLOR << std::endl;
-		testBool(*(ft_c0.insert(++ft_c0.begin(), "Return_this")) == *(std_c0.insert(++std_c0.begin(), "Return_this")), __LINE__);
+		testBool(*(ft_c0.insert(++ft_c0.begin(), "Return_this")) == *(std_c0.insert(++std_c0.begin(), "Return_this")), __FILE__, __LINE__);
 	}
 	{
 		std::cout << HEADER_TITLE << "[ Instanciate empty vector ]" << RESET_COLOR << std::endl;
@@ -66,7 +66,7 @@ testInsert ( void )	{
 
 		std::cout << SUBTITLE << "[ Insert at begin() and check return ]" << RESET_COLOR << std::endl;
 
-		testBool(*(ft_c0.insert(ft_c0.begin(), "Return_this")) == *(std_c0.insert(std_c0.begin(), "Return_this")), __LINE__);
+		testBool(*(ft_c0.insert(ft_c0.begin(), "Return_this")) == *(std_c0.insert(std_c0.begin(), "Return_this")), __FILE__, __LINE__);
 		testVector(ft_c0, std_c0, NOPRINT);
 	}
 	{
@@ -77,7 +77,7 @@ testInsert ( void )	{
 
 		std::cout << SUBTITLE << "[ Insert at end() and check return ]" << RESET_COLOR << std::endl;
 
-		testBool(*(ft_c0.insert(ft_c0.end(), "Return_this")) == *(std_c0.insert(std_c0.end(), "Return_this")), __LINE__);
+		testBool(*(ft_c0.insert(ft_c0.end(), "Return_this")) == *(std_c0.insert(std_c0.end(), "Return_this")), __FILE__, __LINE__);
 		testVector(ft_c0, std_c0, NOPRINT);
 	}
 
@@ -260,7 +260,7 @@ testErase (void )	{
 				std::cout << "std\tPtr expected = " << std_ptr << ", got = " << ret_std_ptr << std::endl;
 			}
 			testVector(ft_c0, std_c0, NOPRINT);
-			testBool(ft_ptr == ret_ft_ptr && std_ptr == ret_std_ptr, __LINE__, i);
+			testBool(ft_ptr == ret_ft_ptr && std_ptr == ret_std_ptr, __FILE__, __LINE__, i);
 		}
 }
 
@@ -284,7 +284,7 @@ testEraseRange(
 				std::cout << "std\tPtr expected = " << std_ptr << ", got = " << ret_std_ptr << std::endl;
 			}
 			testVector(ft_c0, std_c0, NOPRINT);
-			testBool(ft_ptr == ret_ft_ptr && std_ptr == ret_std_ptr, __LINE__);
+			testBool(ft_ptr == ret_ft_ptr && std_ptr == ret_std_ptr, __FILE__, __LINE__);
 }
 
 int

@@ -22,7 +22,7 @@
 #endif
 
 #ifndef ERROR_TITLE
-# define ERROR_TITLE    "\n\033[41m\033[5m\t"
+# define ERROR_TITLE    "\n\033[41m\t"
 #endif
 
 #ifndef ERROR_SOURCE

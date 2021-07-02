@@ -23,17 +23,17 @@ test_constIterator( ft::map<double, int> const & ft_c0, std::map<double, int> co
 	std::map<double, int>::const_iterator	std_it = std_c0.begin();
 	std::map<double, int>::const_iterator	std_itend = std_c0.end();
 
-	testBool(ft_it->first== std_it->first, __LINE__);
-	testBool(ft_it->second== std_it->second, __LINE__);
+	testBool(ft_it->first== std_it->first, __FILE__, __LINE__);
+	testBool(ft_it->second== std_it->second, __FILE__, __LINE__);
 	ft_it++;
 	std_it++;
-	testBool(ft_it->first== std_it->first, __LINE__);
-	testBool(ft_it->second== std_it->second, __LINE__);
+	testBool(ft_it->first== std_it->first, __FILE__, __LINE__);
+	testBool(ft_it->second== std_it->second, __FILE__, __LINE__);
 
 	ft_itend--;
 	std_itend--;
-	testBool(ft_itend->first== std_itend->first, __LINE__);
-	testBool(ft_itend->second== std_itend->second, __LINE__);
+	testBool(ft_itend->first== std_itend->first, __FILE__, __LINE__);
+	testBool(ft_itend->second== std_itend->second, __FILE__, __LINE__);
 }
 
 int
@@ -68,9 +68,9 @@ test_map_iterator( void )	{
 		ft::map<double, int>::iterator		ft_it_3;
 		std_it_3 = std_it_1;
 		ft_it_3 = ft_it_1;
-		testBool(std_it_1->first == ft_it_1->first && std_it_1->second == ft_it_1->second, __LINE__);
-		testBool(std_it_2->first == ft_it_2->first && std_it_2->second == ft_it_2->second, __LINE__);
-		testBool(std_it_3->first == ft_it_3->first && std_it_3->second == ft_it_3->second, __LINE__);
+		testBool(std_it_1->first == ft_it_1->first && std_it_1->second == ft_it_1->second, __FILE__, __LINE__);
+		testBool(std_it_2->first == ft_it_2->first && std_it_2->second == ft_it_2->second, __FILE__, __LINE__);
+		testBool(std_it_3->first == ft_it_3->first && std_it_3->second == ft_it_3->second, __FILE__, __LINE__);
 	}
 	std::cout << HEADER_TITLE << "ASCENDING ORDER VALUES" << RESET_COLOR << std::endl;
 	{
@@ -91,7 +91,7 @@ test_map_iterator( void )	{
 		std::cout << SUBTITLE << "[ test operator= ]" << RESET_COLOR << std::endl;
 		ft_it--;
 		ft_it2 = ft_it;
-		testBool(ft_it == ft_it2, __LINE__);
+		testBool(ft_it == ft_it2, __FILE__, __LINE__);
 	}
 
 	std::cout << HEADER_TITLE << "TEST ITERATOR ARITHMETIC" << RESET_COLOR << std::endl;
@@ -119,31 +119,31 @@ test_map_iterator( void )	{
 		std::map<double, int>::iterator std_it1(std_it0);
 
 		std::cout << SUBTITLE << "[ Pre post increment decrement of iterator ]" << RESET_COLOR << std::endl;
-		testBool(ft_it0->first == std_it0->first, __LINE__);
-		testBool(ft_it0->second == std_it0->second, __LINE__);
+		testBool(ft_it0->first == std_it0->first, __FILE__, __LINE__);
+		testBool(ft_it0->second == std_it0->second, __FILE__, __LINE__);
 		ft_it0++;
 		std_it0++;
-		testBool(ft_it0->first == std_it0->first, __LINE__);
-		testBool(ft_it0->second == std_it0->second, __LINE__);
+		testBool(ft_it0->first == std_it0->first, __FILE__, __LINE__);
+		testBool(ft_it0->second == std_it0->second, __FILE__, __LINE__);
 		ft_it0--;
 		std_it0--;
-		testBool(ft_it0->first == std_it0->first, __LINE__);
-		testBool(ft_it0->second == std_it0->second, __LINE__);
+		testBool(ft_it0->first == std_it0->first, __FILE__, __LINE__);
+		testBool(ft_it0->second == std_it0->second, __FILE__, __LINE__);
 		testMap(ft_c0, std_c0, NOPRINT);
 		std::cout << SUBTITLE << "[ Pre post increment decrement of value with * ]" << RESET_COLOR << std::endl;
 		*ft_it0++;
 		*std_it0++;
-		testBool(ft_it0->first == std_it0->first, __LINE__);
-		testBool(ft_it0->second == std_it0->second, __LINE__);
+		testBool(ft_it0->first == std_it0->first, __FILE__, __LINE__);
+		testBool(ft_it0->second == std_it0->second, __FILE__, __LINE__);
 		testMap(ft_c0, std_c0, NOPRINT);
 
 		ft_it1 = ft_it0;
 		std_it1 = std_it0;
 		std::cout << SUBTITLE << "[ Relational Operators ]" << RESET_COLOR << std::endl;
-		testBool(ft_it0 == ft_it1 && std_it0 == std_it1, __LINE__);
+		testBool(ft_it0 == ft_it1 && std_it0 == std_it1, __FILE__, __LINE__);
 		ft_it1 = ft_c0.begin();
 		std_it1 = std_c0.begin();
-		testBool(ft_it0 != ft_it1 && std_it0 != std_it1, __LINE__);
+		testBool(ft_it0 != ft_it1 && std_it0 != std_it1, __FILE__, __LINE__);
 		ft_it0 = ft_c0.begin();
 		std_it0 = std_c0.begin();
 	}

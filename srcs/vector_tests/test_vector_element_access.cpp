@@ -6,7 +6,7 @@
 /*   By: bvalette <bvalette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 09:50:54 by bvalette          #+#    #+#             */
-/*   Updated: 2021/05/31 10:43:52 by bvalette         ###   ########.fr       */
+/*   Updated: 2021/07/02 14:32:43 by bvalette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ test_front_back(
 	std::cout << SUBTITLE << "Test front() / back()" << RESET_COLOR << std::endl;
 	std::cout << "ft front = " << ft_c0.front() << " std front = " << std_c0.front() << std::endl;
 	std::cout << "ft back = " << ft_c0.back() << " std back = " << std_c0.back() << std::endl;
-	testBool(ft_c0.front() == std_c0.front(), __LINE__);
-	testBool(ft_c0.back() == std_c0.back(), __LINE__);
+	testBool(ft_c0.front() == std_c0.front(), __FILE__, __LINE__);
+	testBool(ft_c0.back() == std_c0.back(), __FILE__, __LINE__);
 }
 
 int

@@ -6,7 +6,7 @@
 /*   By: bvalette <bvalette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 14:46:24 by bvalette          #+#    #+#             */
-/*   Updated: 2021/06/09 17:09:50 by bvalette         ###   ########.fr       */
+/*   Updated: 2021/07/02 15:03:15 by bvalette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ test_value_compare(ft::set<T>& ft_c0, std::set<T>& std_c0)	{
 	ft::set<int>::iterator		ft_it = ft_c0.begin();
 	do {
 		testBool(std_c0.value_comp()(*std_it++, std_highest) == true
-				&& ft_c0.value_comp()(*ft_it++, ft_highest) == true, __LINE__);
+				&& ft_c0.value_comp()(*ft_it++, ft_highest) == true, __FILE__, __LINE__);
 	} while ( std_it != --std_c0.end() && ft_it != --ft_c0.end());
 	testBool((std_c0.value_comp()(*std_it++, std_highest) == false)
-			&& (ft_c0.value_comp()(*ft_it++, ft_highest) == false), __LINE__);
+			&& (ft_c0.value_comp()(*ft_it++, ft_highest) == false), __FILE__, __LINE__);
 	testBool((std_c0.value_comp()((*std_it), (*std_it--)) == false
-			&& ft_c0.value_comp()((*ft_it), (*ft_it--)) == false), __LINE__);
+			&& ft_c0.value_comp()((*ft_it), (*ft_it--)) == false), __FILE__, __LINE__);
 }
 
 template< typename T>
@@ -50,12 +50,12 @@ T std_highest = *(--std_c0.end());  	// key value of last element
 	ft::set<int>::iterator ft_it = ft_c0.begin();
 	do {
 		testBool(std_cmp((*std_it++), std_highest) == true
-				&& ft_cmp((*ft_it++), ft_highest) == true, __LINE__);
+				&& ft_cmp((*ft_it++), ft_highest) == true, __FILE__, __LINE__);
 	} while ( std_it != --std_c0.end() && ft_it != --ft_c0.end());
 	testBool((std_cmp((*std_it++), std_highest) == false)
-			&& (ft_cmp((*ft_it++), ft_highest) == false), __LINE__);
+			&& (ft_cmp((*ft_it++), ft_highest) == false), __FILE__, __LINE__);
 	testBool((std_cmp((*std_it), (*std_it--)) == false)
-			&& (ft_cmp((*ft_it), (*ft_it--)) == false), __LINE__);
+			&& (ft_cmp((*ft_it), (*ft_it--)) == false), __FILE__, __LINE__);
 }
 
 int

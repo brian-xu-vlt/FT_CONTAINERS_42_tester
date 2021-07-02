@@ -27,7 +27,7 @@ test_deque_relational_operators( void )	{
 		std_b.push_back(20);
 		std_b.push_back(30.33f);
 
-		testBool(std_a != std_b, __LINE__);
+		testBool(std_a != std_b, __FILE__, __LINE__);
 
 		std::cout << SUBTITLE << "[ Same values, same calls for ft ]" << RESET_COLOR << std::endl;
 
@@ -40,7 +40,7 @@ test_deque_relational_operators( void )	{
 		ft_b.push_back(20);
 		ft_b.push_back(30.33f);
 
-		testBool(ft_a != ft_b, __LINE__);
+		testBool(ft_a != ft_b, __FILE__, __LINE__);
 	}
 	{
 		std::cout << SUBTITLE << "[ Batch 1: All relational called for std ]" << RESET_COLOR << std::endl;
@@ -57,12 +57,12 @@ test_deque_relational_operators( void )	{
 		std_c.push_back(20);
 		std_c.push_back(10);
 
-		testBool(std_a == std_b, __LINE__);
-		testBool(std_b != std_c, __LINE__);
-		testBool(std_b < std_c, __LINE__);
-		testBool(std_c > std_b, __LINE__);
-		testBool(std_a <= std_b, __LINE__);
-		testBool(std_a >= std_b, __LINE__);
+		testBool(std_a == std_b, __FILE__, __LINE__);
+		testBool(std_b != std_c, __FILE__, __LINE__);
+		testBool(std_b < std_c, __FILE__, __LINE__);
+		testBool(std_c > std_b, __FILE__, __LINE__);
+		testBool(std_a <= std_b, __FILE__, __LINE__);
+		testBool(std_a >= std_b, __FILE__, __LINE__);
 
 		std::cout << SUBTITLE << "[ Same values, same calls for ft ]" << RESET_COLOR << std::endl;
 
@@ -79,12 +79,12 @@ test_deque_relational_operators( void )	{
 		ft_c.push_back(20);
 		ft_c.push_back(10);
 
-		testBool(ft_a == ft_b, __LINE__);
-		testBool(ft_b != ft_c, __LINE__);
-		testBool(ft_b < ft_c, __LINE__);
-		testBool(ft_c > ft_b, __LINE__);
-		testBool(ft_a <= ft_b, __LINE__);
-		testBool(ft_a >= ft_b, __LINE__);
+		testBool(ft_a == ft_b, __FILE__, __LINE__);
+		testBool(ft_b != ft_c, __FILE__, __LINE__);
+		testBool(ft_b < ft_c, __FILE__, __LINE__);
+		testBool(ft_c > ft_b, __FILE__, __LINE__);
+		testBool(ft_a <= ft_b, __FILE__, __LINE__);
+		testBool(ft_a >= ft_b, __FILE__, __LINE__);
 	}
 	{
 		std::cout << SUBTITLE << "[ Batch 2: All relational called for std ]" << RESET_COLOR << std::endl;
@@ -102,12 +102,12 @@ test_deque_relational_operators( void )	{
 		std_c.push_back(20);
 		std_c.push_back(10);
 
-		testBool(!(std_a == std_b), __LINE__);
-		testBool(std_b != std_c, __LINE__);
-		testBool(std_b < std_c, __LINE__);
-		testBool(std_c > std_b, __LINE__);
-		testBool(!(std_a <= std_b), __LINE__);
-		testBool(std_a >= std_b, __LINE__);
+		testBool(!(std_a == std_b), __FILE__, __LINE__);
+		testBool(std_b != std_c, __FILE__, __LINE__);
+		testBool(std_b < std_c, __FILE__, __LINE__);
+		testBool(std_c > std_b, __FILE__, __LINE__);
+		testBool(!(std_a <= std_b), __FILE__, __LINE__);
+		testBool(std_a >= std_b, __FILE__, __LINE__);
 
 		std::cout << SUBTITLE << "[ Same values, same calls for ft ]" << RESET_COLOR << std::endl;
 
@@ -125,12 +125,12 @@ test_deque_relational_operators( void )	{
 		ft_c.push_back(20);
 		ft_c.push_back(10);
 
-		testBool(!(ft_a == ft_b), __LINE__);
-		testBool(ft_b != ft_c, __LINE__);
-		testBool(ft_b < ft_c, __LINE__);
-		testBool(ft_c > ft_b, __LINE__);
-		testBool(!(ft_a <= ft_b), __LINE__);
-		testBool(ft_a >= ft_b, __LINE__);
+		testBool(!(ft_a == ft_b), __FILE__, __LINE__);
+		testBool(ft_b != ft_c, __FILE__, __LINE__);
+		testBool(ft_b < ft_c, __FILE__, __LINE__);
+		testBool(ft_c > ft_b, __FILE__, __LINE__);
+		testBool(!(ft_a <= ft_b), __FILE__, __LINE__);
+		testBool(ft_a >= ft_b, __FILE__, __LINE__);
 	}
 	{
 		std::cout << SUBTITLE << "[ Batch 3: All relational called for std ]" << RESET_COLOR << std::endl;
@@ -145,12 +145,12 @@ test_deque_relational_operators( void )	{
 		std_b.push_back(30);
 		std::deque<int> std_c;
 
-		testBool((std_a != std_b), __LINE__);
-		testBool(std_b != std_c, __LINE__);
-		testBool(!(std_b < std_c), __LINE__);
-		testBool(!(std_c > std_b), __LINE__);
-		testBool((std_a <= std_b), __LINE__);
-		testBool(std_a < std_b, __LINE__);
+		testBool((std_a != std_b), __FILE__, __LINE__);
+		testBool(std_b != std_c, __FILE__, __LINE__);
+		testBool(!(std_b < std_c), __FILE__, __LINE__);
+		testBool(!(std_c > std_b), __FILE__, __LINE__);
+		testBool((std_a <= std_b), __FILE__, __LINE__);
+		testBool(std_a < std_b, __FILE__, __LINE__);
 
 		std::cout << SUBTITLE << "[ Same values, same calls for ft ]" << RESET_COLOR << std::endl;
 
@@ -165,12 +165,12 @@ test_deque_relational_operators( void )	{
 		ft_b.push_back(30);
 		ft::deque<int> ft_c;
 
-		testBool((ft_a != ft_b), __LINE__);
-		testBool(ft_b != ft_c, __LINE__);
-		testBool(!(ft_b < ft_c), __LINE__);
-		testBool(!(ft_c > ft_b), __LINE__);
-		testBool((ft_a <= ft_b), __LINE__);
-		testBool(ft_a < ft_b, __LINE__);
+		testBool((ft_a != ft_b), __FILE__, __LINE__);
+		testBool(ft_b != ft_c, __FILE__, __LINE__);
+		testBool(!(ft_b < ft_c), __FILE__, __LINE__);
+		testBool(!(ft_c > ft_b), __FILE__, __LINE__);
+		testBool((ft_a <= ft_b), __FILE__, __LINE__);
+		testBool(ft_a < ft_b, __FILE__, __LINE__);
 	}
 	return(0);
 }

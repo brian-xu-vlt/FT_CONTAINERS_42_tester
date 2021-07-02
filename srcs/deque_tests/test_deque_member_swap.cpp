@@ -44,10 +44,10 @@ test_deque_member_swap( void )	{
 		testDeque(ft_c1, std_c1, NOPRINT, "Test deque1");
 
 		std::cout << SUBTITLE << "[ test if iterator stayed valid while pointing to new values ]" << RESET_COLOR << std::endl;
-		testBool(&(*ft_it0) == &(*ft_c1.begin()), __LINE__);
-		testBool(&(*ft_it1) == &(*ft_c0.begin()), __LINE__);
-		testBool(&(*std_it0) == &(*std_c1.begin()), __LINE__);
-		testBool(&(*std_it1) == &(*std_c0.begin()), __LINE__);
+		testBool(&(*ft_it0) == &(*ft_c1.begin()), __FILE__, __LINE__);
+		testBool(&(*ft_it1) == &(*ft_c0.begin()), __FILE__, __LINE__);
+		testBool(&(*std_it0) == &(*std_c1.begin()), __FILE__, __LINE__);
+		testBool(&(*std_it1) == &(*std_c0.begin()), __FILE__, __LINE__);
 
 		std::cout << SUBTITLE << "[ assign deque 1 with 10 value 99 ]" << RESET_COLOR << std::endl;
 		ft_c1.assign(10, 99);

@@ -6,7 +6,7 @@
 /*   By: bvalette <bvalette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 10:09:19 by bvalette          #+#    #+#             */
-/*   Updated: 2021/06/01 11:27:26 by bvalette         ###   ########.fr       */
+/*   Updated: 2021/07/02 14:51:53 by bvalette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ test_map_const_find(int findKey, std::map<int, exampleClass> const std_c0, ft::m
 		ft::map<int, exampleClass>::const_iterator	ft_c0_ret = ft_c0.find(findKey);
 
 		if (std_c0_ret == std_c0.end())
-			testBool(ft_c0_ret == ft_c0.end(), __LINE__);
-		else if (testBool(ft_c0_ret != ft_c0.end(), __LINE__) == true)
+			testBool(ft_c0_ret == ft_c0.end(), __FILE__, __LINE__);
+		else if (testBool(ft_c0_ret != ft_c0.end(), __FILE__, __LINE__) == true)
 			testBool(ft_c0_ret->first == std_c0_ret->first
-				&& ft_c0_ret->second == std_c0_ret->second, __LINE__);
+				&& ft_c0_ret->second == std_c0_ret->second, __FILE__, __LINE__);
 }
 
 int
@@ -58,10 +58,10 @@ test_map_find( void )	{
 		ft::map<int, exampleClass>::iterator	ft_c0_ret = ft_c0.find(findKey);
 
 		if (std_c0_ret == std_c0.end())
-			testBool(ft_c0_ret == ft_c0.end(), __LINE__);
-		else if (testBool(ft_c0_ret != ft_c0.end(), __LINE__) == true)
+			testBool(ft_c0_ret == ft_c0.end(), __FILE__, __LINE__);
+		else if (testBool(ft_c0_ret != ft_c0.end(), __FILE__, __LINE__) == true)
 			testBool(ft_c0_ret->first == std_c0_ret->first
-				&& ft_c0_ret->second == std_c0_ret->second, __LINE__);
+				&& ft_c0_ret->second == std_c0_ret->second, __FILE__, __LINE__);
 
 		test_map_const_find(findKey, std_c0, ft_c0);
 
@@ -70,20 +70,20 @@ test_map_find( void )	{
 		ft_c0_ret = ft_c0.find(testSize * 2);
 
 		if (std_c0_ret == std_c0.end())
-			testBool(ft_c0_ret == ft_c0.end(), __LINE__);
-		else if (testBool(ft_c0_ret != ft_c0.end(), __LINE__) == true)
+			testBool(ft_c0_ret == ft_c0.end(), __FILE__, __LINE__);
+		else if (testBool(ft_c0_ret != ft_c0.end(), __FILE__, __LINE__) == true)
 			testBool(ft_c0_ret->first == std_c0_ret->first
-				&& ft_c0_ret->second == std_c0_ret->second, __LINE__);
+				&& ft_c0_ret->second == std_c0_ret->second, __FILE__, __LINE__);
 
 		std::cout << HEADER_TITLE << "[ Test find with a value absent from the map (lower than the lowest key)]" << RESET_COLOR << std::endl;
 		std_c0_ret = std_c0.find(-42);
 		ft_c0_ret = ft_c0.find(-42);
 
 		if (std_c0_ret == std_c0.end())
-			testBool(ft_c0_ret == ft_c0.end(), __LINE__);
-		else if (testBool(ft_c0_ret != ft_c0.end(), __LINE__) == true)
+			testBool(ft_c0_ret == ft_c0.end(), __FILE__, __LINE__);
+		else if (testBool(ft_c0_ret != ft_c0.end(), __FILE__, __LINE__) == true)
 			testBool(ft_c0_ret->first == std_c0_ret->first
-				&& ft_c0_ret->second == std_c0_ret->second, __LINE__);
+				&& ft_c0_ret->second == std_c0_ret->second, __FILE__, __LINE__);
 
 		std::cout << HEADER_TITLE << "[ Test find with empty map ]" << RESET_COLOR << std::endl;
 		ft_c0.clear();
@@ -94,10 +94,10 @@ test_map_find( void )	{
 		ft_c0_ret = ft_c0.find(42);
 
 		if (std_c0_ret == std_c0.end())
-			testBool(ft_c0_ret == ft_c0.end(), __LINE__);
-		else if (testBool(ft_c0_ret != ft_c0.end(), __LINE__) == true)
+			testBool(ft_c0_ret == ft_c0.end(), __FILE__, __LINE__);
+		else if (testBool(ft_c0_ret != ft_c0.end(), __FILE__, __LINE__) == true)
 			testBool(ft_c0_ret->first == std_c0_ret->first
-				&& ft_c0_ret->second == std_c0_ret->second, __LINE__);
+				&& ft_c0_ret->second == std_c0_ret->second, __FILE__, __LINE__);
 	}
 	return (0);
 }

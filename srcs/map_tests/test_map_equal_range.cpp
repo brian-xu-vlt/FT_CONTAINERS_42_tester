@@ -6,7 +6,7 @@
 /*   By: bvalette <bvalette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 15:37:34 by bvalette          #+#    #+#             */
-/*   Updated: 2021/07/02 14:25:31 by bvalette         ###   ########.fr       */
+/*   Updated: 2021/07/02 14:53:59 by bvalette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@ test_map_const_equal_range(int findKey, std::map<int, exampleClass> const std_c0
 		ft::pair< ft::map<int, exampleClass>::const_iterator, ft::map<int, exampleClass>::const_iterator>		ft_c0_ret = ft_c0.equal_range(findKey);
 
 		if (std_c0_ret.first == std_c0.end())
-			testBool(ft_c0_ret.first == ft_c0.end(), __LINE__);
+			testBool(ft_c0_ret.first == ft_c0.end(), __FILE__, __LINE__);
 		if (std_c0_ret.second == std_c0.end())
-			testBool(ft_c0_ret.second == ft_c0.end(), __LINE__);
+			testBool(ft_c0_ret.second == ft_c0.end(), __FILE__, __LINE__);
 		if (ft_c0_ret.first != ft_c0.end())
 			testBool(ft_c0_ret.first->first == std_c0_ret.first->first
-				&& ft_c0_ret.first->second == std_c0_ret.first->second, __LINE__);
+				&& ft_c0_ret.first->second == std_c0_ret.first->second, __FILE__, __LINE__);
 		if (ft_c0_ret.second != ft_c0.end())
 			testBool(ft_c0_ret.second->first == std_c0_ret.second->first
-				&& ft_c0_ret.second->second == std_c0_ret.second->second, __LINE__);
+				&& ft_c0_ret.second->second == std_c0_ret.second->second, __FILE__, __LINE__);
 }
 
 int
@@ -61,15 +61,15 @@ test_map_equal_range( void )	{
 		ft::pair< ft::map<int, exampleClass>::iterator, ft::map<int, exampleClass>::iterator>		ft_c0_ret = ft_c0.equal_range(findKey);
 
 		if (std_c0_ret.first == std_c0.end())
-			testBool(ft_c0_ret.first == ft_c0.end(), __LINE__);
+			testBool(ft_c0_ret.first == ft_c0.end(), __FILE__, __LINE__);
 		if (std_c0_ret.second == std_c0.end())
-			testBool(ft_c0_ret.second == ft_c0.end(), __LINE__);
+			testBool(ft_c0_ret.second == ft_c0.end(), __FILE__, __LINE__);
 		if (ft_c0_ret.first != ft_c0.end())
 			testBool(ft_c0_ret.first->first == std_c0_ret.first->first
-				&& ft_c0_ret.first->second == std_c0_ret.first->second, __LINE__);
+				&& ft_c0_ret.first->second == std_c0_ret.first->second, __FILE__, __LINE__);
 		if (ft_c0_ret.second != ft_c0.end())
 			testBool(ft_c0_ret.second->first == std_c0_ret.second->first
-				&& ft_c0_ret.second->second == std_c0_ret.second->second, __LINE__);
+				&& ft_c0_ret.second->second == std_c0_ret.second->second, __FILE__, __LINE__);
 
 		test_map_const_equal_range(findKey, std_c0, ft_c0);
 
@@ -78,30 +78,30 @@ test_map_equal_range( void )	{
 		ft_c0_ret = ft_c0.equal_range(testSize * 2);
 
 		if (std_c0_ret.first == std_c0.end())
-			testBool(ft_c0_ret.first == ft_c0.end(), __LINE__);
+			testBool(ft_c0_ret.first == ft_c0.end(), __FILE__, __LINE__);
 		if (std_c0_ret.second == std_c0.end())
-			testBool(ft_c0_ret.second == ft_c0.end(), __LINE__);
+			testBool(ft_c0_ret.second == ft_c0.end(), __FILE__, __LINE__);
 		if (ft_c0_ret.first != ft_c0.end())
 			testBool(ft_c0_ret.first->first == std_c0_ret.first->first
-				&& ft_c0_ret.first->second == std_c0_ret.first->second, __LINE__);
+				&& ft_c0_ret.first->second == std_c0_ret.first->second, __FILE__, __LINE__);
 		if (ft_c0_ret.second != ft_c0.end())
 			testBool(ft_c0_ret.second->first == std_c0_ret.second->first
-				&& ft_c0_ret.second->second == std_c0_ret.second->second, __LINE__);
+				&& ft_c0_ret.second->second == std_c0_ret.second->second, __FILE__, __LINE__);
 
 		std::cout << HEADER_TITLE << "[ Test equal_range with a value absent from the map (lower than the lowest key)]" << RESET_COLOR << std::endl;
 		std_c0_ret = std_c0.equal_range(-42);
 		ft_c0_ret = ft_c0.equal_range(-42);
 
 		if (std_c0_ret.first == std_c0.end())
-			testBool(ft_c0_ret.first == ft_c0.end(), __LINE__);
+			testBool(ft_c0_ret.first == ft_c0.end(), __FILE__, __LINE__);
 		if (std_c0_ret.second == std_c0.end())
-			testBool(ft_c0_ret.second == ft_c0.end(), __LINE__);
+			testBool(ft_c0_ret.second == ft_c0.end(), __FILE__, __LINE__);
 		if (ft_c0_ret.first != ft_c0.end())
 			testBool(ft_c0_ret.first->first == std_c0_ret.first->first
-				&& ft_c0_ret.first->second == std_c0_ret.first->second, __LINE__);
+				&& ft_c0_ret.first->second == std_c0_ret.first->second, __FILE__, __LINE__);
 		if (ft_c0_ret.second != ft_c0.end())
 			testBool(ft_c0_ret.second->first == std_c0_ret.second->first
-				&& ft_c0_ret.second->second == std_c0_ret.second->second, __LINE__);
+				&& ft_c0_ret.second->second == std_c0_ret.second->second, __FILE__, __LINE__);
 
 		std::cout << HEADER_TITLE << "[ Test equal_range with empty map ]" << RESET_COLOR << std::endl;
 		ft_c0.clear();
@@ -109,18 +109,18 @@ test_map_equal_range( void )	{
 		testMap(ft_c0, std_c0, NOPRINT);
 
 		std_c0_ret = std_c0.equal_range(42);
-	//	ft_c0_ret = ft_c0.equal_range(42);
+		ft_c0_ret = ft_c0.equal_range(42);
 
 		if (std_c0_ret.first == std_c0.end())
-			testBool(ft_c0_ret.first == ft_c0.end(), __LINE__);
+			testBool(ft_c0_ret.first == ft_c0.end(), __FILE__, __LINE__);
 		if (std_c0_ret.second == std_c0.end())
-			testBool(ft_c0_ret.second == ft_c0.end(), __LINE__);
+			testBool(ft_c0_ret.second == ft_c0.end(), __FILE__, __LINE__);
 		if (ft_c0_ret.first != ft_c0.end())
 			testBool(ft_c0_ret.first->first == std_c0_ret.first->first
-				&& ft_c0_ret.first->second == std_c0_ret.first->second, __LINE__);
+				&& ft_c0_ret.first->second == std_c0_ret.first->second, __FILE__, __LINE__);
 		if (ft_c0_ret.second != ft_c0.end())
 			testBool(ft_c0_ret.second->first == std_c0_ret.second->first
-				&& ft_c0_ret.second->second == std_c0_ret.second->second, __LINE__);
+				&& ft_c0_ret.second->second == std_c0_ret.second->second, __FILE__, __LINE__);
 	}
 	return (0);
 }

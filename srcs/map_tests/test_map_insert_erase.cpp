@@ -110,10 +110,10 @@ testInserEraseAdvanced ( void )	{
 				ft_it = ft_c0.insert(ft_it, ft::make_pair(val_insert - 1, 21));
 
 				if (std_it == std_c0.end())
-					testBool(ft_it == ft_c0.end(), __LINE__);
-				else if (testBool(ft_it != ft_c0.end(), __LINE__) == true)
+					testBool(ft_it == ft_c0.end(), __FILE__, __LINE__);
+				else if (testBool(ft_it != ft_c0.end(), __FILE__, __LINE__) == true)
 					testBool(ft_it->first == std_it->first
-						&& ft_it->second == std_it->second, __LINE__);
+						&& ft_it->second == std_it->second, __FILE__, __LINE__);
 				testMap(ft_c0, std_c0, NOPRINT);
 				std_c0.erase(val_remove);
 				ft_c0.erase(val_remove);
@@ -145,7 +145,7 @@ testCppRefCode( void )	{
 	std::cout << HEADER_TITLE << "[ Test boolean returned in a pair in case of pre existing element ]" << RESET_COLOR << std::endl;
 	std::pair<std::map<char,int>::iterator,bool> std_ret = std_c0.insert ( std::pair<char,int>('z',500) );
 	ft::pair<ft::map<char,int>::iterator,bool> ft_ret = ft_c0.insert ( ft::pair<char,int>('z',500) );
-	testBool((std_ret.second == ft_ret.second), __LINE__);
+	testBool((std_ret.second == ft_ret.second), __FILE__, __LINE__);
 	testMap<char, int>(ft_c0, std_c0, NOPRINT);
 
 	std::cout << HEADER_TITLE << "[ Insert with hint ]" << RESET_COLOR << std::endl;
@@ -260,7 +260,7 @@ testBasicErase( void )	{
 		std_c0.erase(std_it);
 		ft_c0.erase(ft_it);
 		testMap<char, exampleClass>(ft_c0, std_c0, NOPRINT);
-		testBool( (--std_ite)->first == (--ft_ite)->first , __LINE__);
+		testBool( (--std_ite)->first == (--ft_ite)->first , __FILE__, __LINE__);
 		std_ite++;
 		ft_ite++;
 

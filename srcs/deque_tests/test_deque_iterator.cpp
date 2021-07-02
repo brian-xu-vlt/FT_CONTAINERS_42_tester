@@ -23,11 +23,11 @@ test_constIterator( ft::deque<int> const & ft_c0, std::deque<int> const & std_c0
 	std::deque<int>::const_iterator	std_it = std_c0.begin();
 	std::deque<int>::const_iterator	std_itend = (std_c0.end() - 1);
 
-	testBool(*ft_it== *std_it, __LINE__);
-	testBool(*ft_itend == *std_itend, __LINE__);
+	testBool(*ft_it== *std_it, __FILE__, __LINE__);
+	testBool(*ft_itend == *std_itend, __FILE__, __LINE__);
 	ft_it++;
 	std_it++;
-	testBool(*ft_it== *std_it, __LINE__);
+	testBool(*ft_it== *std_it, __FILE__, __LINE__);
 }
 
 int
@@ -53,11 +53,11 @@ test_deque_iterator( void )	{
 		std::deque<int>::iterator		std_it2 = std_c0.begin();
 
 		std::cout << SUBTITLE << "[ test operator< with iterator to begin < end ]" << RESET_COLOR << std::endl;
-		testBool(ft_it < ft_itend, __LINE__);
+		testBool(ft_it < ft_itend, __FILE__, __LINE__);
 		std::cout << SUBTITLE << "[ loop test iterator increment vs. iterator + i ]" << RESET_COLOR << std::endl;
 		for (size_t i = 0; i < ft_c0.size(); i++)
 		{
-			testBool(*ft_it == *(ft_it2 + i) && *std_it == *(std_it2 + i), __LINE__);
+			testBool(*ft_it == *(ft_it2 + i) && *std_it == *(std_it2 + i), __FILE__, __LINE__);
 			ft_it++;
 			std_it++;
 		}
@@ -66,13 +66,13 @@ test_deque_iterator( void )	{
 
 		ft_it--;
 		ft_it2 = ft_it;
-		testBool(ft_it == ft_it2, __LINE__);
+		testBool(ft_it == ft_it2, __FILE__, __LINE__);
 
 		std::cout << SUBTITLE << "[ loop test iterator increment vs. iterator + i ]" << RESET_COLOR << std::endl;
 		for (size_t i = 0; i < ft_c0.size() - 1; ++i, --ft_it)
-			testBool((*ft_it == *(ft_it2 - i)), __LINE__, i);
+			testBool((*ft_it == *(ft_it2 - i)), __FILE__, __LINE__, i);
 
-		testBool(static_cast<size_t>(ft_itend - ft_it) == ft_c0.size(), __LINE__);
+		testBool(static_cast<size_t>(ft_itend - ft_it) == ft_c0.size(), __FILE__, __LINE__);
 		test_constIterator(ft_c0, std_c0);
 	}
 
@@ -101,61 +101,61 @@ test_deque_iterator( void )	{
 		std::deque<int>::iterator std_it1(std_it0);
 
 		std::cout << SUBTITLE << "[ Pre post increment decrement of iterator ]" << RESET_COLOR << std::endl;
-		testBool(*ft_it0 == *std_it0, __LINE__);
+		testBool(*ft_it0 == *std_it0, __FILE__, __LINE__);
 		ft_it0++;
 		std_it0++;
-		testBool(*ft_it0 == *std_it0, __LINE__);
+		testBool(*ft_it0 == *std_it0, __FILE__, __LINE__);
 		ft_it0 += 21;
 		std_it0 += 21;
-		testBool(*ft_it0 == *std_it0, __LINE__);
+		testBool(*ft_it0 == *std_it0, __FILE__, __LINE__);
 		ft_it0--;
 		std_it0--;
-		testBool(*ft_it0 == *std_it0, __LINE__);
+		testBool(*ft_it0 == *std_it0, __FILE__, __LINE__);
 		std::cout << SUBTITLE << "[ operator[] ]" << RESET_COLOR << std::endl;
-		testBool(ft_it0[4] == std_it0[4], __LINE__);
-		testBool(ft_it0[-4] == std_it0[-4], __LINE__);
+		testBool(ft_it0[4] == std_it0[4], __FILE__, __LINE__);
+		testBool(ft_it0[-4] == std_it0[-4], __FILE__, __LINE__);
 		std::cout << SUBTITLE << "[ Pre post increment decrement of value with * ]" << RESET_COLOR << std::endl;
 		*ft_it0++;
 		*std_it0++;
-		testBool(*ft_it0 == *std_it0, __LINE__);
+		testBool(*ft_it0 == *std_it0, __FILE__, __LINE__);
 		testDeque(ft_c0, std_c0, NOPRINT);
 
 		ft_it1 = ft_it0;
 		std_it1 = std_it0;
 		std::cout << SUBTITLE << "[ Relational Operators ]" << RESET_COLOR << std::endl;
-		testBool(ft_it0 == ft_it1 && std_it0 == std_it1, __LINE__);
-		testBool(ft_it0 >= ft_it1 && std_it0 >= std_it1, __LINE__);
-		testBool(ft_it0 <= ft_it1 && std_it0 <= std_it1, __LINE__);
+		testBool(ft_it0 == ft_it1 && std_it0 == std_it1, __FILE__, __LINE__);
+		testBool(ft_it0 >= ft_it1 && std_it0 >= std_it1, __FILE__, __LINE__);
+		testBool(ft_it0 <= ft_it1 && std_it0 <= std_it1, __FILE__, __LINE__);
 		ft_it1 = ft_c0.begin();
 		std_it1 = std_c0.begin();
-		testBool(ft_it0 != ft_it1 && std_it0 != std_it1, __LINE__);
-		testBool(ft_it0 > ft_it1 && std_it0 > std_it1, __LINE__);
-		testBool(ft_it0 >= ft_it1 && std_it0 >= std_it1, __LINE__);
-		testBool(ft_it1 < ft_it0 && std_it1 < std_it0, __LINE__);
-		testBool(ft_it1 <= ft_it0 && std_it1 <= std_it0, __LINE__);
+		testBool(ft_it0 != ft_it1 && std_it0 != std_it1, __FILE__, __LINE__);
+		testBool(ft_it0 > ft_it1 && std_it0 > std_it1, __FILE__, __LINE__);
+		testBool(ft_it0 >= ft_it1 && std_it0 >= std_it1, __FILE__, __LINE__);
+		testBool(ft_it1 < ft_it0 && std_it1 < std_it0, __FILE__, __LINE__);
+		testBool(ft_it1 <= ft_it0 && std_it1 <= std_it0, __FILE__, __LINE__);
 		ft_it0 = ft_c0.begin();
 		std_it0 = std_c0.begin();
 		ft_it0 += 5;
 		std_it0 += 5;
 		std::cout << SUBTITLE << "[ iterator substraction ]" << RESET_COLOR << std::endl;
-		testBool(ft_it0 - ft_it1 == std_it0 - std_it1, __LINE__);
-		testBool(ft_it1 - ft_it0 == std_it1 - std_it0, __LINE__);
+		testBool(ft_it0 - ft_it1 == std_it0 - std_it1, __FILE__, __LINE__);
+		testBool(ft_it1 - ft_it0 == std_it1 - std_it0, __FILE__, __LINE__);
 
 		std::cout << SUBTITLE << "[ iterator addition ]" << RESET_COLOR << std::endl;
 		ft_it0 = ft_c0.begin() + 10;
 		std_it0 = std_c0.begin() + 10;
-		testBool(ft_it0 - ft_it1 == std_it0 - std_it1, __LINE__);
-		testBool(ft_it1 - ft_it0 == std_it1 - std_it0, __LINE__);
+		testBool(ft_it0 - ft_it1 == std_it0 - std_it1, __FILE__, __LINE__);
+		testBool(ft_it1 - ft_it0 == std_it1 - std_it0, __FILE__, __LINE__);
 
 		std::cout << SUBTITLE << "[ iterator's value changed but dereferencing with operator*]" << RESET_COLOR << std::endl;
 		*ft_it0 = 5000;
 		*std_it0 = 5000;
-		testBool(*ft_it0 == *std_it0, __LINE__);
+		testBool(*ft_it0 == *std_it0, __FILE__, __LINE__);
 		testDeque(ft_c0, std_c0, NOPRINT);
 		std::cout << SUBTITLE << "[ iterator's value changed but dereferencing with operator[] ]" << RESET_COLOR << std::endl;
 		ft_it0[1] = 42;
 		std_it0[1] = 42;
-		testBool(*ft_it0 == *std_it0, __LINE__);
+		testBool(*ft_it0 == *std_it0, __FILE__, __LINE__);
 		testDeque(ft_c0, std_c0, NOPRINT);
 	}
 	{
@@ -166,8 +166,8 @@ test_deque_iterator( void )	{
 		ft::deque<std::pair<int, int> >::iterator 		ft_it0 = ft_c0.begin();
 		std::deque<std::pair<int, int> >::iterator 	std_it0 = std_c0.begin();
 
-		testBool(ft_it0->first == std_it0->first, __LINE__);
-		testBool(ft_it0->second == std_it0->second, __LINE__);
+		testBool(ft_it0->first == std_it0->first, __FILE__, __LINE__);
+		testBool(ft_it0->second == std_it0->second, __FILE__, __LINE__);
 	}
 	return (0);
 }
