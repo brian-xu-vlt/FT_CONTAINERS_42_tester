@@ -267,49 +267,48 @@ all:
 $(NAME): $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_DEQUE) $(OBJS_LIST) $(OBJS_MAP) $(OBJS_SET) $(OBJS_STACK) $(OBJS_VECTOR)
 	@echo
 	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
-#vector list map set queue stack deque 
-
-
 
 compile_deque: $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_DEQUE)
 	@echo
-	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
+	@echo "🎉 \033[32m Ready to $@ ...\033[0m "
 
 compile_list: $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_LIST)
 	@echo
-	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
+	@echo "🎉 \033[32m Ready to $@ ...\033[0m "
 
 compile_map: $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_MAP)
 	@echo
-	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
+	@echo "🎉 \033[32m Ready to $@ ...\033[0m "
 
 compile_vector: $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_VECTOR)
 	@echo
-	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
+	@echo "🎉 \033[32m Ready to $@ ...\033[0m "
 
 compile_stack: $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_STACK)
 	@echo
-	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
+	@echo "🎉 \033[32m Ready to $@ ...\033[0m "
 
 
 compile_set: $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_SET)
 	@echo
-	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
+	@echo "🎉 \033[32m Ready to $@ ...\033[0m "
 
 compile_queue: $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_QUEUE)
 	@echo
-	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
+	@echo "🎉 \033[32m Ready to $@ ...\033[0m "
 
 
 deque: compile_deque
 	$(CC) -std=c++11 $(CFLAGS) $(OBJS) $(OBJS_DEQUE) -I $(INCLUDES) -o $@
 	@echo
 	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
+	@./$@ | cat -n
 
 list: compile_list
 	$(CC) -std=c++11 $(CFLAGS) $(OBJS) $(OBJS_LIST) -I $(INCLUDES) -o $@
 	@echo
 	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
+	@./$@ | cat -n
 
 map: compile_map
 	$(CC) -std=c++11 $(CFLAGS) $(OBJS) $(OBJS_MAP) -I $(INCLUDES) -o $@
@@ -392,7 +391,7 @@ fclean : clean
 re : fclean
 	@$(MAKE)
 
-f : cpp98 all
+f : cpp98 all list map vector stack queue deque set
 
 .PHONY: all clean fclean mclean re list map queue stack deque set vector FORCE cmp
 #.SILENT:
