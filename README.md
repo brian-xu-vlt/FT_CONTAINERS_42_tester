@@ -14,7 +14,7 @@
 
 ---
 
-<p align="center"> This project is a tester I developed will completing the FT_CONTAINERS project.
+<p align="center"> This project is a tester I developed while completing the FT_CONTAINERS project at École 42.
     <br> 
 </p>
 
@@ -22,6 +22,7 @@
 
 - [About](#about)
 - [Getting Started](#getting_started)
+- [Acknowledgement](#acknowledgement)
 
 ## 🧐 About <a name = "about"></a>
 
@@ -43,12 +44,18 @@ Tests are performed on:
 - Deque
 - Queue
 
-Note: this test assumes you have implemented your own ft::pair. If you have not, uncomment the last block of comment in `./include/your_headers.hpp`
+Note: this test assumes you have implemented your own ft::pair (as you should).
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
 - First place your projects headers in directory : `./includes/your_headers_files`
 - Then update the file `./includes/your_headers.hpp` to include your files.
 - `make f` will precompile your headers and check their std98 compiliance, then compile the tester and run every tests.
-- Note: Tester will stop at the first failure (except tests performed on max_size of some containers as their result mey vary with OS, and may reflect some personnal decision on implementation which may be valid and yield to variation with STL).
 - `make <container name>` will perform tests on a specific container.
+
+Note: Tester will stop at the first failure (except tests performed on max_size of some containers as their result mey vary with OS, and may reflect some personnal decision on implementation which may be valid and yield to variation with STL).
+
+## ⚠️  Acknowledgement <a name = "acknowledgement"></a>
+
+Please note this test is based on my own work, you should use it as a complement of your own testes. First because it might be wrong on some points, second because you will learn much more by doing your tester than doing the project itself: you will learn how to use the STL's version, its limitations, its power etc. ... 
+
