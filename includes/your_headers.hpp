@@ -6,16 +6,15 @@
 /*   By: bvalette <bvalette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 09:33:20 by bvalette          #+#    #+#             */
-/*   Updated: 2021/07/02 11:08:25 by bvalette         ###   ########.fr       */
+/*   Updated: 2021/07/02 15:48:12 by bvalette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef YOUR_HEADERS
 # define YOUR_HEADERS
 
-/* Include here your project's headers.
+/* Include here your project's headers, ex :
 
-*/
 
 # include "./your_headers_files/utils/ft_is_integer.hpp"
 # include "./your_headers_files/utils/ft_algo.hpp"
@@ -36,5 +35,6 @@
 # include "./your_headers_files/vector/vector.hpp"
 # include "./your_headers_files/vector/vector_iterator.hpp"
 
+*/
 
 #endif
