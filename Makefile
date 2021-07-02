@@ -264,44 +264,78 @@ all:
 	@echo
 	@echo
 
-deque: $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_DEQUE)
+$(NAME): $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_DEQUE) $(OBJS_LIST) $(OBJS_MAP) $(OBJS_SET) $(OBJS_STACK) $(OBJS_VECTOR)
+	@echo
+	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
+#vector list map set queue stack deque 
+
+
+
+compile_deque: $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_DEQUE)
+	@echo
+	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
+
+compile_list: $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_LIST)
+	@echo
+	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
+
+compile_map: $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_MAP)
+	@echo
+	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
+
+compile_vector: $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_VECTOR)
+	@echo
+	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
+
+compile_stack: $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_STACK)
+	@echo
+	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
+
+
+compile_set: $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_SET)
+	@echo
+	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
+
+compile_queue: $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_QUEUE)
+	@echo
+	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
+
+
+deque: compile_deque
 	$(CC) -std=c++11 $(CFLAGS) $(OBJS) $(OBJS_DEQUE) -I $(INCLUDES) -o $@
 	@echo
 	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
-	@./$@ | cat -n
 
-list: $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_LIST)
+list: compile_list
 	$(CC) -std=c++11 $(CFLAGS) $(OBJS) $(OBJS_LIST) -I $(INCLUDES) -o $@
 	@echo
 	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
-	@./$@ | cat -n
 
-map: $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_MAP)
+map: compile_map
 	$(CC) -std=c++11 $(CFLAGS) $(OBJS) $(OBJS_MAP) -I $(INCLUDES) -o $@
 	@echo
 	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
 	@./$@ | cat -n
 
-vector: $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_VECTOR)
+vector: compile_vector
 	$(CC) -std=c++11 $(CFLAGS) $(OBJS) $(OBJS_VECTOR) -I $(INCLUDES) -o $@
 	@echo
 	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
 	@./$@ | cat -n
 
-stack: $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_STACK)
+stack: compile_stack
 	$(CC) -std=c++11 $(CFLAGS) $(OBJS) $(OBJS_STACK) -I $(INCLUDES) -o $@
 	@echo
 	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
 	@./$@ | cat -n
 
-
-set: $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_SET)
+set: compile_set
 	$(CC) -std=c++11 $(CFLAGS) $(OBJS) $(OBJS_SET) -I $(INCLUDES) -o $@
 	@echo
 	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
 	@./$@ | cat -n
 
-queue: $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_QUEUE)
+queue: compile_queue
 	$(CC) -std=c++11 $(CFLAGS) $(OBJS) $(OBJS_QUEUE) -I $(INCLUDES) -o $@
 	@echo
 	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
@@ -331,10 +365,9 @@ $(OBJS_VECTOR): $(OBJ_DIR)%.o: %.cpp $(PROJECT_HEADER) $(HEADER)
 $(OBJS): $(OBJ_DIR)%.o: %.cpp $(PROJECT_HEADER) $(HEADER)
 	$(CC) -std=c++11 $(CFLAGS) $(OTHER_FLAGS) -c $<  -I $(INCLUDES) -o $@
 
-$(NAME): vector list map set queue stack deque 
-
 $(PCHS): $(PCH_DIR)%.pch: %.hpp $(PROJECT_HEADER)
 	$(CC) -std=c++98 $(CFLAGS) $< -o $@
+	@echo "🎉 \033[32m Your project's headers are cpp98 compliant $@ !\033[0m ✅"
 
 $(OBJ_DIR):
 	@mkdir -p $@
@@ -343,7 +376,6 @@ $(PCH_DIR):
 	@mkdir -p $@
 
 cpp98 : $(PCH_DIR) $(PCHS)
-	@echo "🎉 \033[32m Your project's headers are cpp98 compliant $@ !\033[0m ✅"
 
 pch:
 	$(MAKE) $(PCH_DIR)

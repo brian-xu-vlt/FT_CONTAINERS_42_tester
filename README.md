@@ -43,11 +43,12 @@ Tests are performed on:
 - Stack
 - Map
 - List
+######Bonus part :
 - Set
 - Deque
 - Queue
 
-Note: this test assumes you have implemented your own ft::pair (as you should).
+***NB: this test assumes you have implemented your own ft::pair (as you should).***
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
@@ -56,13 +57,18 @@ Note: this test assumes you have implemented your own ft::pair (as you should).
 
 ## 👩‍💻 Usage <a name = "usage"></a>
 
-- `make f` will precompile your headers and check their std98 compliance, then compile the tester and run every tests.
+- `make` will precompile your headers and check their std98 compliance, then compile the tester.
+- `make f` will do all of the above and run every tests.
+#### To test only selected containers: 
 - `make [container names]` will perform tests on a specific containers, one after the other according to the list passed.
 - `make cpp98` will perform tests one your header to verify cpp98 compliance.
 
-Note: Each tester will stop at the first failure (except tests performed on max_size of some containers as their result may vary with OS, and may reflect some personnal decision on implementation which may be valid and yield to variation with STL).
+- `make compile_<container_name>` will compile the specific container tests.
 
-- In order to use the tester with valgrind or fsanitize, some tests need to reduce their memory size. Use `make valgrind_mode=1` To compile the tester with such smaller tests
+NB: In case of failure, each test will display errors and run the next test, at the end of each container test unit, a message will show if something went wrong at any point.
+
+#### Special needs:
+In order to use the tester with valgrind or fsanitize, some tests need to reduce their memory size. Use `make valgrind_mode=1` To compile the tester with such smaller tests
 
 ## ⚠️  Acknowledgement <a name = "acknowledgement"></a>
 
