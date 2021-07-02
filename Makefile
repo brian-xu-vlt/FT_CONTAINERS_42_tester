@@ -115,132 +115,125 @@ SRCS += ./main_utils.cpp
 #-------- LIST #################################################################
 ################################################################################
 
-SRCS += ./main_tester_list.cpp
-
-SRCS += ./test_list_instantiation.cpp
-SRCS += ./test_list_push_back_push_front_pop_back_pop_front.cpp
-SRCS += ./test_list_clear.cpp
-SRCS += ./test_list_capacities.cpp
-SRCS += ./test_list_insert_erase.cpp
-SRCS += ./test_list_operatorEqual.cpp
-SRCS += ./test_list_resize.cpp
-SRCS += ./test_list_assign.cpp
-SRCS += ./test_list_member_swap.cpp
-SRCS += ./test_list_nonmember_swap.cpp
-SRCS += ./test_list_relational_operators.cpp
-SRCS += ./test_list_splice.cpp
-SRCS += ./test_list_remove_if.cpp
-SRCS += ./test_list_remove.cpp
-SRCS += ./test_list_unique.cpp
-SRCS += ./test_list_merge.cpp
-SRCS += ./test_list_sort.cpp
-SRCS += ./test_list_iterator.cpp
-SRCS += ./test_list_reverseIterator.cpp
-SRCS += ./test_list_reverse.cpp
-SRCS += ./test_list_element_access.cpp
+SRCS_LIST += ./main_tester_list.cpp
+SRCS_LIST += ./test_list_instantiation.cpp
+SRCS_LIST += ./test_list_push_back_push_front_pop_back_pop_front.cpp
+SRCS_LIST += ./test_list_clear.cpp
+SRCS_LIST += ./test_list_capacities.cpp
+SRCS_LIST += ./test_list_insert_erase.cpp
+SRCS_LIST += ./test_list_operatorEqual.cpp
+SRCS_LIST += ./test_list_resize.cpp
+SRCS_LIST += ./test_list_assign.cpp
+SRCS_LIST += ./test_list_member_swap.cpp
+SRCS_LIST += ./test_list_nonmember_swap.cpp
+SRCS_LIST += ./test_list_relational_operators.cpp
+SRCS_LIST += ./test_list_splice.cpp
+SRCS_LIST += ./test_list_remove_if.cpp
+SRCS_LIST += ./test_list_remove.cpp
+SRCS_LIST += ./test_list_unique.cpp
+SRCS_LIST += ./test_list_merge.cpp
+SRCS_LIST += ./test_list_sort.cpp
+SRCS_LIST += ./test_list_iterator.cpp
+SRCS_LIST += ./test_list_reverseIterator.cpp
+SRCS_LIST += ./test_list_reverse.cpp
+SRCS_LIST += ./test_list_element_access.cpp
 
 ################################################################################
 #-------- VECTOR ###############################################################
 ################################################################################
 
-SRCS += ./main_tester_vector.cpp
-
-SRCS += ./test_vector_instantiation.cpp
-SRCS += ./test_vector_push_back_pop_back.cpp
-SRCS += ./test_vector_clear.cpp
-SRCS += ./test_vector_capacities.cpp
-SRCS += ./test_vector_insert_erase.cpp
-SRCS += ./test_vector_operatorEqual.cpp
-SRCS += ./test_vector_resize.cpp
-SRCS += ./test_vector_assign.cpp
-SRCS += ./test_vector_at_operatorBrackets.cpp
-SRCS += ./test_vector_member_swap.cpp
-SRCS += ./test_vector_nonmember_swap.cpp
-SRCS += ./test_vector_relational_operators.cpp
-SRCS += ./test_vector_iterator.cpp
-SRCS += ./test_vector_reverseIterator.cpp
-SRCS += ./test_vector_element_access.cpp
+SRCS_VECTOR += ./main_tester_vector.cpp
+SRCS_VECTOR += ./test_vector_instantiation.cpp
+SRCS_VECTOR += ./test_vector_push_back_pop_back.cpp
+SRCS_VECTOR += ./test_vector_clear.cpp
+SRCS_VECTOR += ./test_vector_capacities.cpp
+SRCS_VECTOR += ./test_vector_insert_erase.cpp
+SRCS_VECTOR += ./test_vector_operatorEqual.cpp
+SRCS_VECTOR += ./test_vector_resize.cpp
+SRCS_VECTOR += ./test_vector_assign.cpp
+SRCS_VECTOR += ./test_vector_at_operatorBrackets.cpp
+SRCS_VECTOR += ./test_vector_member_swap.cpp
+SRCS_VECTOR += ./test_vector_nonmember_swap.cpp
+SRCS_VECTOR += ./test_vector_relational_operators.cpp
+SRCS_VECTOR += ./test_vector_iterator.cpp
+SRCS_VECTOR += ./test_vector_reverseIterator.cpp
+SRCS_VECTOR += ./test_vector_element_access.cpp
 
 ################################################################################
 #-------- STACK  ###############################################################
 ################################################################################
 
-SRCS += ./main_tester_stack.cpp
-
-SRCS += ./test_stack_general.cpp
+SRCS_STACK += ./main_tester_stack.cpp
+SRCS_STACK += ./test_stack_general.cpp
 
 # ################################################################################
 # #-------- QUEUE  ###############################################################
 # ################################################################################
 
-SRCS += ./main_tester_queue.cpp
-
-SRCS += ./test_queue_general.cpp
+SRCS_QUEUE += ./main_tester_queue.cpp
+SRCS_QUEUE += ./test_queue_general.cpp
 
 ################################################################################
 #-------- DEQUE  ###############################################################
 ################################################################################
 
-SRCS += ./main_tester_deque.cpp
-
-SRCS += ./test_deque_instantiation.cpp
-SRCS += ./test_deque_push_pop.cpp
-SRCS += ./test_deque_clear.cpp
-SRCS += ./test_deque_capacities.cpp
-SRCS += ./test_deque_insert_erase.cpp
-SRCS += ./test_deque_operatorEqual.cpp
-SRCS += ./test_deque_resize.cpp
-SRCS += ./test_deque_assign.cpp
-SRCS += ./test_deque_at_operatorBrackets.cpp
-SRCS += ./test_deque_member_swap.cpp
-SRCS += ./test_deque_nonmember_swap.cpp
-SRCS += ./test_deque_relational_operators.cpp
-SRCS += ./test_deque_iterator.cpp
-SRCS += ./test_deque_reverseIterator.cpp
-SRCS += ./test_deque_element_access.cpp
+SRCS_DEQUE += ./main_tester_deque.cpp
+SRCS_DEQUE += ./test_deque_instantiation.cpp
+SRCS_DEQUE += ./test_deque_push_pop.cpp
+SRCS_DEQUE += ./test_deque_clear.cpp
+SRCS_DEQUE += ./test_deque_capacities.cpp
+SRCS_DEQUE += ./test_deque_insert_erase.cpp
+SRCS_DEQUE += ./test_deque_operatorEqual.cpp
+SRCS_DEQUE += ./test_deque_resize.cpp
+SRCS_DEQUE += ./test_deque_assign.cpp
+SRCS_DEQUE += ./test_deque_at_operatorBrackets.cpp
+SRCS_DEQUE += ./test_deque_member_swap.cpp
+SRCS_DEQUE += ./test_deque_nonmember_swap.cpp
+SRCS_DEQUE += ./test_deque_relational_operators.cpp
+SRCS_DEQUE += ./test_deque_iterator.cpp
+SRCS_DEQUE += ./test_deque_reverseIterator.cpp
+SRCS_DEQUE += ./test_deque_element_access.cpp
 
 ################################################################################
 #-------- MAP    ###############################################################
 ################################################################################
 
-SRCS += ./main_tester_map.cpp
-
-SRCS += ./test_map_instantiation.cpp
-SRCS += ./test_map_insert_erase.cpp
-SRCS += ./test_map_capacities.cpp
-SRCS += ./test_map_iterator.cpp
-SRCS += ./test_map_at_operatorBrackets.cpp
-SRCS += ./test_map_swap.cpp
-SRCS += ./test_map_clear.cpp
-SRCS += ./test_key_compare_value_compare.cpp
-SRCS += ./test_map_operatorEqual.cpp
-SRCS += ./test_map_find.cpp
-SRCS += ./test_map_count.cpp
-SRCS += ./test_map_lower_bound.cpp
-SRCS += ./test_map_upper_bound.cpp
-SRCS += ./test_map_equal_range.cpp
-SRCS += ./test_map_reverseIterator.cpp
+SRCS_MAP += ./main_tester_map.cpp
+SRCS_MAP += ./test_map_instantiation.cpp
+SRCS_MAP += ./test_map_insert_erase.cpp
+SRCS_MAP += ./test_map_capacities.cpp
+SRCS_MAP += ./test_map_iterator.cpp
+SRCS_MAP += ./test_map_at_operatorBrackets.cpp
+SRCS_MAP += ./test_map_swap.cpp
+SRCS_MAP += ./test_map_clear.cpp
+SRCS_MAP += ./test_key_compare_value_compare.cpp
+SRCS_MAP += ./test_map_operatorEqual.cpp
+SRCS_MAP += ./test_map_find.cpp
+SRCS_MAP += ./test_map_count.cpp
+SRCS_MAP += ./test_map_lower_bound.cpp
+SRCS_MAP += ./test_map_upper_bound.cpp
+SRCS_MAP += ./test_map_equal_range.cpp
+SRCS_MAP += ./test_map_reverseIterator.cpp
 
 ################################################################################
 #-------- SET    ###############################################################
 ################################################################################
 
-SRCS += ./main_tester_set.cpp
-
-SRCS += ./test_set_instantiation.cpp
-SRCS += ./test_set_insert_erase.cpp
-SRCS += ./test_set_capacities.cpp
-SRCS += ./test_set_iterator.cpp
-SRCS += ./test_set_swap.cpp
-SRCS += ./test_set_clear.cpp
-SRCS += ./test_set_key_compare_value_compare.cpp
-SRCS += ./test_set_operatorEqual.cpp
-SRCS += ./test_set_find.cpp
-SRCS += ./test_set_count.cpp
-SRCS += ./test_set_lower_bound.cpp
-SRCS += ./test_set_upper_bound.cpp
-SRCS += ./test_set_equal_range.cpp
-SRCS += ./test_set_reverseIterator.cpp
+SRCS_SET += ./main_tester_set.cpp
+SRCS_SET += ./test_set_instantiation.cpp
+SRCS_SET += ./test_set_insert_erase.cpp
+SRCS_SET += ./test_set_capacities.cpp
+SRCS_SET += ./test_set_iterator.cpp
+SRCS_SET += ./test_set_swap.cpp
+SRCS_SET += ./test_set_clear.cpp
+SRCS_SET += ./test_set_key_compare_value_compare.cpp
+SRCS_SET += ./test_set_operatorEqual.cpp
+SRCS_SET += ./test_set_find.cpp
+SRCS_SET += ./test_set_count.cpp
+SRCS_SET += ./test_set_lower_bound.cpp
+SRCS_SET += ./test_set_upper_bound.cpp
+SRCS_SET += ./test_set_equal_range.cpp
+SRCS_SET += ./test_set_reverseIterator.cpp
 
 vpath %.cpp ./srcs
 vpath %.cpp ./srcs/list_tests
@@ -253,18 +246,18 @@ vpath %.cpp ./srcs/set_tests
 
 vpath %.hpp ./includes
 vpath %.hpp ./includes/tester
+vpath %.hpp ./includes/your_headers
 
-vpath %.hpp ./includes/list
-vpath %.hpp ./includes/vector
-vpath %.hpp ./includes/deque
-vpath %.hpp ./includes/stack
-vpath %.hpp ./includes/queue
-vpath %.hpp ./includes/map
-vpath %.hpp ./includes/set
-
-vpath %.hpp ./includes/utils
+OBJS_VECTOR = $(patsubst %.cpp, $(OBJ_DIR)%.o, $(SRCS_VECTOR))
+OBJS_STACK= $(patsubst %.cpp, $(OBJ_DIR)%.o, $(SRCS_STACK))
+OBJS_QUEUE = $(patsubst %.cpp, $(OBJ_DIR)%.o, $(SRCS_QUEUE))
+OBJS_DEQUE = $(patsubst %.cpp, $(OBJ_DIR)%.o, $(SRCS_DEQUE))
+OBJS_MAP = $(patsubst %.cpp, $(OBJ_DIR)%.o, $(SRCS_MAP))
+OBJS_SET = $(patsubst %.cpp, $(OBJ_DIR)%.o, $(SRCS_SET))
+OBJS_LIST = $(patsubst %.cpp, $(OBJ_DIR)%.o, $(SRCS_LIST))
 
 OBJS = $(patsubst %.cpp, $(OBJ_DIR)%.o, $(SRCS))
+
 PCHS = $(patsubst %.hpp, $(PCH_DIR)%.pch, $(PROJECT_HEADER))
 
 all :
@@ -272,7 +265,8 @@ all :
 	@echo
 	@echo
 
-vector : all
+vector : $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_VECTOR)
+	$(CC) -std=c++11 $(CFLAGS) $(OBJS) $(OBJS_VECTOR) -I $(INCLUDES) -o $(NAME)
 	@echo
 	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
 	@./$(NAME) $@ | cat -n
@@ -307,11 +301,25 @@ deque : all
 	@echo "🎉 \033[32m Ready to test $@ !\033[0m ✅"
 	@./$(NAME) $@ | cat -n
 
+$(OBJS_DEQUE): $(OBJ_DIR)%.o: %.cpp $(PROJECT_HEADER) $(HEADER)
+	$(CC) -std=c++11 $(CFLAGS) $(OTHER_FLAGS) -c $<  -I $(INCLUDES) -o $@
+$(OBJS_LIST): $(OBJ_DIR)%.o: %.cpp $(PROJECT_HEADER) $(HEADER)
+	$(CC) -std=c++11 $(CFLAGS) $(OTHER_FLAGS) -c $<  -I $(INCLUDES) -o $@
+$(OBJS_MAP): $(OBJ_DIR)%.o: %.cpp $(PROJECT_HEADER) $(HEADER)
+	$(CC) -std=c++11 $(CFLAGS) $(OTHER_FLAGS) -c $<  -I $(INCLUDES) -o $@
+$(OBJS_QUEUE): $(OBJ_DIR)%.o: %.cpp $(PROJECT_HEADER) $(HEADER)
+	$(CC) -std=c++11 $(CFLAGS) $(OTHER_FLAGS) -c $<  -I $(INCLUDES) -o $@
+$(OBJS_SET): $(OBJ_DIR)%.o: %.cpp $(PROJECT_HEADER) $(HEADER)
+	$(CC) -std=c++11 $(CFLAGS) $(OTHER_FLAGS) -c $<  -I $(INCLUDES) -o $@
+$(OBJS_STACK): $(OBJ_DIR)%.o: %.cpp $(PROJECT_HEADER) $(HEADER)
+	$(CC) -std=c++11 $(CFLAGS) $(OTHER_FLAGS) -c $<  -I $(INCLUDES) -o $@
+$(OBJS_VECTOR): $(OBJ_DIR)%.o: %.cpp $(PROJECT_HEADER) $(HEADER)
+	$(CC) -std=c++11 $(CFLAGS) $(OTHER_FLAGS) -c $<  -I $(INCLUDES) -o $@
 $(OBJS): $(OBJ_DIR)%.o: %.cpp $(PROJECT_HEADER) $(HEADER)
 	$(CC) -std=c++11 $(CFLAGS) $(OTHER_FLAGS) -c $<  -I $(INCLUDES) -o $@
 
-$(NAME): $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS)
-	$(CC) -std=c++11 $(CFLAGS) $(OBJS) -I $(INCLUDES) -o $@
+$(NAME): $(PCH_DIR) $(PCHS) $(OBJ_DIR) $(OBJS) $(OBJS_STACK) $(OBJS_LIST) $(OBJS_VECTOR) $(OBJS_QUEUE) $(OBJS_SET) $(OBJS_DEQUE) $(OBJS_MAP)
+	$(CC) -std=c++11 $(CFLAGS) $(OBJS) $(OBJS_STACK) $(OBJS_LIST) $(OBJS_VECTOR) $(OBJS_QUEUE) $(OBJS_SET) $(OBJS_DEQUE) $(OBJS_MAP) -I $(INCLUDES) -o $@
 	@echo "🎉 \033[32m$@ is ready !\033[0m ✅"
 
 $(PCHS): $(PCH_DIR)%.pch: %.hpp $(PROJECT_HEADER)

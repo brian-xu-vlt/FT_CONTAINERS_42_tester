@@ -1,7 +1,8 @@
 <p align="center">
-  <a href="" rel="noopener">
- <img width=200px src="./assets/head.jpg" alt="Project logo"></a>
+  <a href="https://profile.intra.42.fr/users/bvalette" rel="noopener">
+ <img width=200px src="./assets/head.png" alt="Project logo"></a>
 </p>
+
 
 <h3 align="center">FT_CONTAINERS: tester</h3>
 
@@ -14,8 +15,9 @@
 
 ---
 
-<p align="center"> This project is a tester I developed while completing the FT_CONTAINERS project at École 42.
-    <br> 
+### This project is a tester I developed while completing the FT_CONTAINERS project at École 42.
+<p align="center">
+  <img width=100px src="./assets/cpp.png" alt="Project logo"></a>
 </p>
 
 ## 📝 Table of Contents
@@ -31,7 +33,7 @@
  <img width=800px src="./assets/preview.gif" alt="Project logo"></a>
 </p>
 
-This tester is intended to be used on FT_CONTAINERS, a École 42's project in which students have to reimplement some of the STL containers, based on c++98. This tester is designed to work for the projects as per May 2021's version. Meaning it will not test the new revision and bonuses.
+This tester is intended to be used on FT_CONTAINERS, a École 42's project in which students have to reimplement some of the STL containers, based on c++98. This tester is designed to work for the projects as per May 2021's version. Meaning it will not test the new revision and bonuses. But you will be able to test each container individually.
 It performs tests to verify the student implementation based on STL behaviour and output comparison.
 
 Tests are performed on: 
